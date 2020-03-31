@@ -1,6 +1,5 @@
-
 module.exports = {
     index(request, response) {
-        return response.json({ message: "Funcionou" })
+        return response.json({ message: "POR FAVOR DEUSasd" })
     }
 }

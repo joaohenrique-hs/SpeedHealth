@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 // import { Link, useHistory } from 'react-router-dom';
-// import {FiLogIn} from 'react-icons/fi'
-
-import api from '../../services/api';
+// import {FiLogIn} from 'react-icons/fi';
 
 import './style.css';
 
+import api from '../../services/api';
+
 export default function Teste(){
-    const response = await api.get('/', { message });
+    const [resposta, setResposta] = useState([]);
+
+    api.get('teste').then(response => {
+        setResposta(response.data.message)
+    })
 
     return(
         <div className="test-container">
-            <h1> {response} </h1>
+            <h1> Funcionou </h1>
+            <h1> { resposta } </h1>
         </div>
     );
 }
