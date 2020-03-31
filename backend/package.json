@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "nodemon src/server.js"
   },
@@ -14,6 +14,9 @@
     "express": "^4.17.1",
     "knex": "^0.20.13",
     "sqlite3": "^4.1.1"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
