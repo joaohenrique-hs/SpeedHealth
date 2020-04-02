@@ -15,6 +15,11 @@ module.exports = {
             uf
         } = request.body
 
+        if(!description){
+            const description = ''
+            console.log('Merda')
+        } 
+
         const id = generateUniqueId()
 
         await connection('pharmacys').insert({
