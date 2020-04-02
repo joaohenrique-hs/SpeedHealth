@@ -2,8 +2,8 @@ exports.up = function(knex) {
     return knex.schema.createTable('items', function (table) {
         table.string('id').primary()
         table.string('title').notNullable()
-        table.decimal('preco').notNullable()
-        table.string('description')
+        table.decimal('price').notNullable()
+        table.string('description').notNullable()
 
         table.string('pharmacy_id')
 
