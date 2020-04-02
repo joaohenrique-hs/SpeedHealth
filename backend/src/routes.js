@@ -16,5 +16,7 @@ routes.post('/pharmacy', PharmacyMiddleware.create(), PharmacyController.create 
 routes.post('/login', PharmacyMiddleware.login(), PharmacyController.login)
 
 routes.post('/items', ItemMiddleware.create(), AuthMiddleware, ItemController.create)
+routes.get('/items', ItemMiddleware.index(), AuthMiddleware, ItemController.index)
+routes.delete('/items/:id', ItemMiddleware.delete(), AuthMiddleware, ItemController.delete)
 
 module.exports = routes
