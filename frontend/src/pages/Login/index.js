@@ -4,7 +4,7 @@ import { Link/*, useHistory*/ } from 'react-router-dom';
 
 import './style.css';
 
-import imageLogin from '../../assets/speedHealth.png';
+import Logo from '../../assets/speedHealth.png';
 
 // import api from '../../services/api';
 
@@ -16,8 +16,8 @@ export default function Login(){
     })*/
 
     return(
-        <div className="login-container">
-            <img src={imageLogin} alt='Speed Health'/>
+        <div className="loginContainer">
+            <img src={Logo} alt='Speed Health'/>
             <div className="content">
                 <form>
                     <input className="input" type="email" placeholder="E-MAIL" />

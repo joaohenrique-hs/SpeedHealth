@@ -1,4 +1,4 @@
-.login-container {
+.loginContainer {
     width: 100%;
     height: 100vh;
     margin: 0 auto;
@@ -8,41 +8,41 @@
     align-items: center;
     justify-content: space-between;
 }
-.login-container  img{
+.loginContainer  img{
     width: 25%;
 }
-.login-container .content {
+.loginContainer .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
-.login-container .content form{
+.loginContainer .content form{
     display: flex;
     flex-direction: column;
 }
-.login-container .content form input {
+.loginContainer .content form input {
     height: 35px;
     width: 400px;
     margin-bottom: 2vh;
     
 }
-.login-container .content button {
+.loginContainer .content button {
     width: 120px;
     height: 35px;
     margin: 5px;
 }
-.login-container .content .ou { 
+.loginContainer .content .ou { 
     color: #aeaeae;
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     align-self: center;
 }
-.login-container .content .ou p{
+.loginContainer .content .ou p{
     font-size: 20px;
     text-align: center;
 }
-.login-container .content .ou hr{
+.loginContainer .content .ou hr{
     background-color: #aeaeae;
     border-style: none;
     margin-top: 15px;
