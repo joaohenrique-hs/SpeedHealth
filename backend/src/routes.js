@@ -9,6 +9,7 @@ const routes = express.Router()
 
 routes.get('/teste', IndexController.index)
 
-routes.post('/pharmacy', PharmacyController.create, PharmacyMiddleware.create)
+routes.post('/pharmacy', PharmacyMiddleware.create(), PharmacyController.create )
+routes.post('/login', PharmacyMiddleware.login(), PharmacyController.login)
 
 module.exports = routes
