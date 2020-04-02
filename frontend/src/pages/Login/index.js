@@ -1,5 +1,5 @@
 import React/*, {useState}*/ from 'react';
-// import { Link, useHistory } from 'react-router-dom';
+import { Link/*, useHistory*/ } from 'react-router-dom';
 // import {FiLogIn} from 'react-icons/fi';
 
 import './style.css';
@@ -20,8 +20,8 @@ export default function Login(){
             <img src={imageLogin} alt='Speed Health'/>
             <div className="content">
                 <form>
-                    <input type="email" placeholder="E-MAIL" />
-                    <input type="password" placeholder="SENHA" />
+                    <input className="input" type="email" placeholder="E-MAIL" />
+                    <input className="input" type="password" placeholder="SENHA" />
                 </form>
                 <button onClick="#" className="button"> ENTRE </button>
                 <div className="ou">
@@ -29,7 +29,9 @@ export default function Login(){
                     <p>OU</p>
                     <hr/>
                 </div>
-                <button onClick="#" className="button"> CADASTRE-SE </button>
+                <Link to="/pharmacy">
+                    <button className="button"> CADASTRE-SE </button>
+                </Link>
             </div>
         </div>
     );

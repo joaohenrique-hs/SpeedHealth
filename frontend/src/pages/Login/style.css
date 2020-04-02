@@ -20,16 +20,12 @@
 .login-container .content form{
     display: flex;
     flex-direction: column;
-    
 }
 .login-container .content form input {
     height: 35px;
     width: 400px;
-    border-radius: 30px;
-    border-style: none;
-    text-align: center;
     margin-bottom: 2vh;
-    background-image: linear-gradient(to right,#f0f0f0, #fff, #f0f0f0);
+    
 }
 .login-container .content button {
     width: 120px;
