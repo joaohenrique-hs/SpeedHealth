@@ -1,6 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+    font-family: oswald;
+}
+body {
+    background: #f0f0f0;
+}
+.button {
+    background-color: #37FF33;
+    color: white;
+    border-radius: 35px;
+    border-style: none;
+    font-size: 18px;
+    transition: .2s;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+.button:hover {
+    background-color: #2dc92a;
 }
