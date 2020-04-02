@@ -1,6 +1,30 @@
 const connection = require('../database/connection')
 
 module.exports = {
+    async modify(request, response) {
+        const { id } = request.params
+        const { title, price, description } = request.body
+        const pharmacy_id = request.id
+
+        const items = await connection('items')
+            .where('id', id)
+            .select('pharmacy_id')
+            .first()
+
+        if (items.pharmacy_id !== pharmacy_id) {
+            return response.status(401).json({ error: "Operation not permited." })
+        }
+
+        await connection('items')
+            .where('id', id)
+            .update({title, price, description}, 'title')
+            .then(function () {
+                return response.json({ title, price, description })
+            })
+
+        return response.status(500).send()
+    },
+
     async delete(request, response) {
         const { id } = request.params
         const pharmacy_id = request.id
