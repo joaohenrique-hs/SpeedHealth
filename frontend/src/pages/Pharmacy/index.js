@@ -1,29 +1,114 @@
-import React/*, {useState}*/ from 'react';
-import { Link/*, useHistory*/ } from 'react-router-dom';
+import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 // import {FiLogIn} from 'react-icons/fi';
+
+import api from '../../services/api';
 
 import './style.css';
 
 import Logo from '../../assets/speedHealth.png';
 
 export default function Pharmacy(){
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [cnpj, setCnpj] = useState('');
+    const [whatsapp, setWhatsapp] = useState('');
+    // const [description, setDescription] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [uf, setUf] = useState('');
+
+    const history = useHistory();
+
+    async function handleRegister(e) {
+        e.preventDefault();
+
+        const data = {
+            name,
+            email,
+            password,
+            cnpj,
+            whatsapp,
+            address,
+            city,
+            uf
+        }
+
+        try {
+            const response = await api.post('pharmacy', data);
+            if (response.status === 200) {
+                history.push('/');
+            }else {
+                throw new Error ('')
+            }
+        } catch (err) {
+            alert("Erro ao realizar o cadastro, tente novamente");
+        }
+    }
+
     return (
         <div className="pharmacyContainer">
             <div className="form">
                 <p className="registerTitle">CADASTRO</p>
-                <form onSubmit="#">
-                    <input className="input2" placeholder="NOME"></input>
-                    <input className="input2" placeholder="CNPJ"></input>
-                    <input className="input2" type="email" placeholder="E-MAIL"></input>
-                    <input className="input2" type="password" placeholder="SENHA"></input>
-                    <input className="input2" placeholder="TELEFONE"></input>
-                    <input className="input2" placeholder="ENDEREÇO"></input>
+                <form onSubmit={handleRegister}>
+                    <input 
+                        className="input2"
+                        placeholder="NOME"
+                        value={name}
+                        onChange = {e => setName(e.target.value)}
+                    />
+                    <input
+                        className="input2"
+                        placeholder="CNPJ"
+                        value={cnpj}
+                        onChange = {e => setCnpj(e.target.value)}
+                    />
+                    <input
+                        className="input2"
+                        type="email"
+                        placeholder="E-MAIL"
+                        value={email}
+                        onChange = {e => setEmail(e.target.value)}
+                    />
+                    <input
+                        className="input2"
+                        type="password"
+                        placeholder="SENHA"
+                        value={password}
+                        onChange = {e => setPassword(e.target.value)}
+                    />
+                    <input
+                        className="input2"
+                        placeholder="TELEFONE"
+                        value={whatsapp}
+                        onChange = {e => setWhatsapp(e.target.value)}
+                    />
+                    <input
+                        className="input2"
+                        placeholder="ENDEREÇO"
+                        value={address}
+                        onChange = {e => setAddress(e.target.value)}
+                    />
                     <div className="inputGroup">
-                        <input className="input2" style={{width: 80}} maxLength="2" placeholder="UF"></input>
-                        <input className="input2" style={{width: 420}} placeholder="CIDADE"></input>
+                        <input
+                            className="input2"
+                            style={{width: 80}}
+                            maxLength="2"
+                            placeholder="UF"
+                            value={uf}
+                            onChange = {e => setUf(e.target.value)}
+                        />
+                        <input
+                            className="input2"
+                            style={{width: 420}}
+                            placeholder="CIDADE"
+                            value={city}
+                            onChange = {e => setCity(e.target.value)}
+                        />
                     </div>
+                    <button className="button" type="submit">CADASTRAR-SE</button>
                 </form>
-                <button className="button">CADASTRAR-SE</button>
             </div>
             <aside>
                 <img src={Logo} alt='Speed Health'/>

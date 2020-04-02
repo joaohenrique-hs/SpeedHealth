@@ -1,6 +1,8 @@
-import React/*, {useState}*/ from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import {FiPlus} from 'react-icons/fi';
+
+import api from '../../services/api';
 
 import './style.css';
 
@@ -9,6 +11,28 @@ import Logo from '../../assets/speedHealth.png';
 import CardImg from '../../assets/cardImg.png';
 
 export default function Items() {
+    const [items, setItems] = useState([]);
+    const token = localStorage.getItem('token');
+
+    const history = useHistory();
+
+    useEffect(() => {
+        api.get('items', {
+            headers: {
+                token: token,
+            }
+        }).then(response => {
+            setItems(response.data);
+        })
+    }, [token]);
+
+    console.log(items);
+
+    function handleLogout () {
+        localStorage.clear();
+        history.push('/');
+    }
+
     return (
         <div className="itemsContainer">
             <div className="navBar">
@@ -18,106 +42,28 @@ export default function Items() {
                 </div>
                 <div className="navBarRight">
                     <button className="button2">PERFIL</button>
-                    <button className="logout"> <FiPower size={20} color="#37FF33"/> </button>
+                    <button onClick={handleLogout} className="logout"> <FiPower size={20} color="#37FF33"/> </button>
                 </div>
             </div>
             <div className="feed">
-                <Link style={{textDecoration: '#fff'}} to="/items/modify">
-                    <div className="card">
-                        <img src={CardImg} alt="img"/>
-                        <aside className="cardContent">
-                            <p className="title">NOME DO PRODUTO</p>
-                            <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                            <div>
-                                <div className="values">
-                                    <p>VALOR</p>
-                                    <p>R$120,00</p>
+                {items.map(item => (
+                    <Link style={{textDecoration: '#fff'}} to="/items/modify">
+                        <div className="card" key={item.id}>
+                            <img src={CardImg} alt="img"/>
+                            <aside className="cardContent">
+                                <p className="title">{item.title}</p>
+                                <p className="description">{item.description}</p>
+                                <div>
+                                    <div className="values">
+                                        <p>VALOR</p>
+                                        <p>{Intl.NumberFormat('pt-BR', {style: "currency", currency: "BRL"}).format(item.price)}</p>
+                                    </div>
+                                    <hr/>
                                 </div>
-                                <hr/>
-                            </div>
-                        </aside>
-                    </div>
-                </Link>
-                <Link style={{textDecoration: '#fff'}} to="/items/modify">
-                    <div className="card">
-                        <img src={CardImg} alt="img"/>
-                        <aside className="cardContent">
-                            <p className="title">NOME DO PRODUTO</p>
-                            <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                            <div>
-                                <div className="values">
-                                    <p>VALOR</p>
-                                    <p>R$120,00</p>
-                                </div>
-                                <hr/>
-                            </div>
-                        </aside>
-                    </div>
-                </Link>
-                <Link style={{textDecoration: '#fff'}} to="/items/modify">
-                    <div className="card">
-                        <img src={CardImg} alt="img"/>
-                        <aside className="cardContent">
-                            <p className="title">NOME DO PRODUTO</p>
-                            <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                            <div>
-                                <div className="values">
-                                    <p>VALOR</p>
-                                    <p>R$120,00</p>
-                                </div>
-                                <hr/>
-                            </div>
-                        </aside>
-                    </div>
-                </Link>
-                <Link style={{textDecoration: '#fff'}} to="/items/modify">
-                    <div className="card">
-                        <img src={CardImg} alt="img"/>
-                        <aside className="cardContent">
-                            <p className="title">NOME DO PRODUTO</p>
-                            <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                            <div>
-                                <div className="values">
-                                    <p>VALOR</p>
-                                    <p>R$120,00</p>
-                                </div>
-                                <hr/>
-                            </div>
-                        </aside>
-                    </div>
-                </Link>
-                <Link style={{textDecoration: '#fff'}} to="/items/modify">
-                    <div className="card">
-                        <img src={CardImg} alt="img"/>
-                        <aside className="cardContent">
-                            <p className="title">NOME DO PRODUTO</p>
-                            <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                            <div>
-                                <div className="values">
-                                    <p>VALOR</p>
-                                    <p>R$120,00</p>
-                                </div>
-                                <hr/>
-                            </div>
-                        </aside>
-                    </div>
-                </Link>
-                <Link style={{textDecoration: '#fff'}} to="/items/modify">
-                    <div className="card">
-                        <img src={CardImg} alt="img"/>
-                        <aside className="cardContent">
-                            <p className="title">NOME DO PRODUTO</p>
-                            <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                            <div>
-                                <div className="values">
-                                    <p>VALOR</p>
-                                    <p>R$120,00</p>
-                                </div>
-                                <hr/>
-                            </div>
-                        </aside>
-                    </div>
-                </Link>
+                            </aside>
+                        </div>
+                    </Link>
+                ))}
             </div>
             <Link to="/items/register">
                 <div className="add">

@@ -8,7 +8,7 @@ import imgInput from '../../assets/imgInput.png';
 
 export default function ItemRegister(){
     return (
-        <div className="itemRegisterContainer">
+        <div className="itemModifyContainer">
             <div className="card">
                 <div className="header">
                     <div>
@@ -20,19 +20,14 @@ export default function ItemRegister(){
                     <hr/>
                 </div>
                 <div className="content">
-                    <form>
-                        <input className="input3" placeholder="TÍTULO" type="text"/>
-                        <input className="input3" placeholder="VALOR EM REAIS" type="text"/>
-                        <textarea className="input3" placeholder="DESCRIÇÃO" type="textarea"/>
+                    <form onSubmit="#">
+                    <input className="input3" placeholder="TÍTULO" type="text"/>
+                    <input className="input3" placeholder="VALOR EM REAIS" type="text"/>
+                    <textarea className="input3" placeholder="DESCRIÇÃO" type="textarea"/>
+                    <button className="button" type="submit">SALVAR</button>
                     </form>
                     <div className="aside">
                         <img src={imgInput} alt="Input"/>
-                        <div>
-                            <Link to="/items">
-                                <button className="button3">CANCELAR</button>
-                            </Link>
-                            <button className="button">SALVAR</button>
-                        </div>
                     </div>
                 </div>
             </div>

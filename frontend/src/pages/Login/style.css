@@ -17,15 +17,25 @@
     align-items: center;
     margin-bottom: 20px;
 }
-.loginContainer .content form{
+.loginContainer .content .login {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-.loginContainer .content form input {
+.loginContainer .content .login form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginContainer .content .login form input {
     height: 35px;
     width: 400px;
     margin-bottom: 2vh;
-    
+}
+.loginContainer .content .login form button {
+    width: 120px;
+    height: 35px;
+    margin: 5px;
 }
 .loginContainer .content button {
     width: 120px;

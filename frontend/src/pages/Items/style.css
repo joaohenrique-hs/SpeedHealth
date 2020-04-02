@@ -19,8 +19,8 @@
     min-width: 90px;
 }
 .itemsContainer .navBar .navBarLeft span {
-    font-size: 30px;
     margin-left: 5vh;
+    font-size: 25px;
 }
 .itemsContainer .navBar .navBarRight {
     display: flex;
@@ -29,7 +29,7 @@
     margin-right: 5vh;
 }
 .itemsContainer .navBar .navBarRight .button2 {
-    font-size: 30px;
+    font-size: 25px;
     width: 250px;
     height: 60px;
     margin-right: 2vh;
@@ -46,36 +46,36 @@
 .itemsContainer .navBar .navBarRight .logout:hover {
     filter: brightness(90%);
 }
-@media (min-width: 1100px) {
+@media (min-width: 1300px) {
     .itemsContainer .feed {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 2%;
         row-gap: 5%;
         padding: 20px;
-        text-decoration: none;
     }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     .itemsContainer .feed {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-items: center;
         column-gap: 2%;
         row-gap: 5%;
         padding: 20px;
-        text-decoration: none;
     }
 }
-
 .itemsContainer .feed .card {
     display: flex;
+    flex-direction: row;
+    column-gap: 5vh;
+    width: 100%;
+    min-width: 425px;
+    max-width: 425px;
+    padding: 4vh;
     position: relative;
     bottom: 0px;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    padding: 4%;
-    transition-duration: .2s;
+    transition: .2s;
 }
 .itemsContainer .feed .card:hover {
     cursor: pointer;
@@ -84,21 +84,30 @@
 }
 .itemsContainer .feed .card img {
     width: 40%;
-    margin-right: 5vh;
-}
-.itemsContainer .feed .card .cardContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.itemsContainer .feed .card .cardContent .title {
-    color: #464646;
 }
 .itemsContainer .feed .card .cardContent .values {
+    color: #464646;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.itemsContainer .feed .card .cardContent .title {
+    font-size: 20px;
     color: #464646;
+    text-align: center;
+}
+.itemsContainer .feed .card .cardContent {
+    padding-left: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-inline-size: 225px;
+}
+.itemsContainer .feed .card .cardContent .description {
+    text-align: justify;
+    text-align: center;
+    word-wrap: break-word;
 }
 .itemsContainer .add {
     position: fixed;

@@ -13,6 +13,9 @@ body {
     height: 100vh;
     margin: 0 auto;
 }
+buttom{
+    cursor: pointer;
+}
 .button {
     background-color: #37FF33;
     color: white;
