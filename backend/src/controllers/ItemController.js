@@ -1,6 +1,21 @@
 const connection = require('../database/connection')
 
 module.exports = {
+    async all(request, response){
+        const { page = 1 } = request.query
+
+        const [count] = await connection('items').count()
+
+        const items = await connection('items')
+            .limit(5)
+            .offset((page - 1) * 5)
+            .select('*')
+
+        response.header('X-Total-Count', count['count(*)'])
+
+        return response.json(items)
+    },
+    
     async modify(request, response) {
         const { id } = request.params
         const { title, price, description } = request.body

@@ -3,6 +3,30 @@ const generateUniqueId = require('../utils/generateUniqueId')
 const generateJwtToken = require('../utils/generateJwtToken')
 
 module.exports = {
+    async all(request, response) {
+        const { page = 1 } = request.query
+
+        // const [count] = await connection('pharmacy').count()
+
+        const pharmacys = await connection('pharmacys')
+            .limit(5)
+            .offset((page - 1) * 5)
+            .select([
+                "name",
+                "email",
+                "cnpj",
+                "whatsapp",
+                "description",
+                "address",
+                "city",
+                "uf"
+            ])
+
+        // response.header('X-Total-Count', count['count(*)'])
+
+        return response.json(pharmacys)
+    },
+
     async login(request, response) {
         const { email, password } = request.body
 

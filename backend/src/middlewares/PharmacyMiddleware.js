@@ -1,6 +1,15 @@
 const { celebrate, Segments, Joi } = require('celebrate')
 
 module.exports = {
+    all(){
+        const middleware = celebrate({
+            [Segments.QUERY]: Joi.object().keys({
+                page: Joi.number()
+            })
+        })
+        return (middleware)
+    },
+
     login() {
         const middleware = celebrate({
             [Segments.BODY]: Joi.object().keys({

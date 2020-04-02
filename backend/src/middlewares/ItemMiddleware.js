@@ -1,6 +1,15 @@
 const { celebrate, Segments, Joi } = require('celebrate')
 
 module.exports = {
+    all(){
+        const middleware = celebrate({
+            [Segments.QUERY]: Joi.object().keys({
+                page: Joi.number()
+            })
+        })
+        return (middleware)
+    },
+
     delete() {
         const middleware = celebrate({
             [Segments.HEADERS]: Joi.object({
