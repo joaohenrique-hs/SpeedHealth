@@ -6,21 +6,18 @@ module.exports = {
 
         const pharmacy_id = request.id
 
-        console.log(pharmacy_id)
-
-        try {
-            const [id] = await connection('items').insert({
+        await connection('items')
+            .insert({
                 title,
                 price,
                 description,
                 pharmacy_id,
+            }, 'id')
+            .then(function (id) {
+                const [item_id] = id
+                return response.json({ item_id })
             })
-        }
-        catch (exception) { 
-            console.log(exception)
-            return response.status(500).send()
-        }
 
-        return response.json({ id })
+        return response.json({ item_id })
     }
 }
