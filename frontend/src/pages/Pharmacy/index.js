@@ -1,5 +1,5 @@
 import React/*, {useState}*/ from 'react';
-// import { Link, useHistory } from 'react-router-dom';
+import { Link/*, useHistory*/ } from 'react-router-dom';
 // import {FiLogIn} from 'react-icons/fi';
 
 import './style.css';

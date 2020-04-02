@@ -100,3 +100,21 @@
     justify-content: space-between;
     color: #464646;
 }
+.itemsContainer .add {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.itemsContainer .add button {
+    width: 100px;
+    height: 100px;
+    border-style: none;
+    border-radius: 50px;
+    background: #37FF33;
+    filter: opacity(70%);
+    transition: .2s;
+}
+.itemsContainer .add button:hover {
+    filter: opacity(90%);
+    cursor: pointer;
+}

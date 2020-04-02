@@ -1,5 +1,6 @@
 import React/*, {useState}*/ from 'react';
 import { Link } from 'react-router-dom';
+import {FiPlus} from 'react-icons/fi';
 
 import './style.css';
 
@@ -21,7 +22,7 @@ export default function Items() {
                 </div>
             </div>
             <div className="feed">
-                <Link style={{textDecoration: '#fff'}} to="/">
+                <Link style={{textDecoration: '#fff'}} to="/items/modify">
                     <div className="card">
                         <img src={CardImg} alt="img"/>
                         <aside className="cardContent">
@@ -37,7 +38,7 @@ export default function Items() {
                         </aside>
                     </div>
                 </Link>
-                <Link style={{textDecoration: '#fff'}} to="/">
+                <Link style={{textDecoration: '#fff'}} to="/items/modify">
                     <div className="card">
                         <img src={CardImg} alt="img"/>
                         <aside className="cardContent">
@@ -53,7 +54,7 @@ export default function Items() {
                         </aside>
                     </div>
                 </Link>
-                <Link style={{textDecoration: '#fff'}} to="/">
+                <Link style={{textDecoration: '#fff'}} to="/items/modify">
                     <div className="card">
                         <img src={CardImg} alt="img"/>
                         <aside className="cardContent">
@@ -69,7 +70,7 @@ export default function Items() {
                         </aside>
                     </div>
                 </Link>
-                <Link style={{textDecoration: '#fff'}} to="/">
+                <Link style={{textDecoration: '#fff'}} to="/items/modify">
                     <div className="card">
                         <img src={CardImg} alt="img"/>
                         <aside className="cardContent">
@@ -85,7 +86,7 @@ export default function Items() {
                         </aside>
                     </div>
                 </Link>
-                <Link style={{textDecoration: '#fff'}} to="/">
+                <Link style={{textDecoration: '#fff'}} to="/items/modify">
                     <div className="card">
                         <img src={CardImg} alt="img"/>
                         <aside className="cardContent">
@@ -101,7 +102,7 @@ export default function Items() {
                         </aside>
                     </div>
                 </Link>
-                <Link style={{textDecoration: '#fff'}} to="/">
+                <Link style={{textDecoration: '#fff'}} to="/items/modify">
                     <div className="card">
                         <img src={CardImg} alt="img"/>
                         <aside className="cardContent">
@@ -118,6 +119,11 @@ export default function Items() {
                     </div>
                 </Link>
             </div>
+            <Link to="/items/register">
+                <div className="add">
+                    <button> <FiPlus size={60} color={'#fff'} /> </button>
+                </div>
+            </Link>
         </div>
     )
 }

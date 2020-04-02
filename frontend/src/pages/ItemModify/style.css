@@ -1,0 +1,72 @@
+.itemRegisterContainer {
+    padding: 5%;
+    margin-right: 15vh;
+    margin-left: 15vh;
+}
+.itemRegisterContainer .header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemRegisterContainer .header div spam {
+    font-size: 50px;
+    color: #37FF33;
+}
+.itemRegisterContainer .header hr {
+    background-color: #37FF33;
+    border-style: none;
+    height: 3px;
+}
+.itemRegisterContainer .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemRegisterContainer .content form {
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+.itemRegisterContainer .content form input {
+    height: 40px;
+    margin-bottom: 20px;
+}
+.itemRegisterContainer .content form textarea {
+    height: 225px;
+    resize: none;
+}
+.itemRegisterContainer .content .aside {
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.itemRegisterContainer .content .aside img {
+    width: 80%;
+}
+.itemRegisterContainer .content .aside div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10vh;
+}
+.itemRegisterContainer .content .aside button{
+    width: 200px;
+    height: 35px;
+}
+.itemRegisterContainer .content .aside .button3 {
+    background-color: #d1d1d1;
+    color: white;
+    border-radius: 35px;
+    border-style: none;
+    font-size: 18px;
+    transition: .2s;
+    box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
+}
+.itemRegisterContainer .content .aside .button3:hover {
+    filter: brightness(90%);
+}
