@@ -20,29 +20,40 @@ export default function ItemDetail () {
         <View style={style.container}>
             <View style={style.card}>
                 <View>
-                    <View>
-                        <TouchableOpacity onPress={() => navigateBack()}>
-                            <AntDesign name="arrowleft" size={28} color="#40dfac" />
-                        </TouchableOpacity>
+                    <View style={style.header}>
+                        <View>
+                            <TouchableOpacity onPress={() => navigateBack()}>
+                                <AntDesign name="arrowleft" size={28} color="#40dfac" />
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <Text style={style.itemHeaderText}>{item.name}</Text>
+                        </View>
                     </View>
+                    <View style={style.hr}></View>
+                </View>
+                <View style={style.itemContent}>
                     <View style={style.itemImg}>
                         <Image style ={style.itemImage} source={itemImg}/>
                     </View>
-                </View>
-                <View style={style.itemContent}>
-                    <Text style={style.itemText}>{item.name}</Text>
-                    <Text style={style.itemText}>{item.description}</Text>
+                    <Text style={style.itemText}>DESCRIÇÃO:</Text>
+                    <Text style={style.itemDescription}>{item.description}</Text>
                     <View style={style.values}>
+                        <Text style={style.itemText}>VALOR</Text>
                         <Text style={style.itemText}>{item.value}</Text>
                     </View>
                 </View>
                 <View style={style.buttons}>
-                    <TouchableOpacity style={style.button}>
-                        <Text style={style.buttonText}> CONTATO </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={style.button}>
-                        <Text style={style.buttonText}> COMPRAR </Text>
-                    </TouchableOpacity>
+                    <View style={style.buttonBox}>
+                        <TouchableOpacity style={style.button}>
+                            <Text style={style.buttonText}> CONTATO </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={style.buttonBox}>
+                        <TouchableOpacity style={style.button}>
+                            <Text style={style.buttonText}> COMPRAR </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </View>

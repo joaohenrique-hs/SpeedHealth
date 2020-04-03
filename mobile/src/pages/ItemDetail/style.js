@@ -20,8 +20,21 @@ export default StyleSheet.create({
         },
         shadowOpacity: 0.48,
         shadowRadius: 11.95,
-
         elevation: 18,
+    },
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    itemHeaderText: {
+        fontSize: 30,
+        color: '#41dfad',
+    },
+    hr: {
+        padding: 7,
+        borderBottomColor: '#41dfad',
+        borderBottomWidth: 1,
     },
     itemImg: {
         padding: 12,
@@ -40,15 +53,25 @@ export default StyleSheet.create({
         fontSize: 22,
         textAlign: 'justify',
     },
+    itemDescription: {
+        fontSize: 16,
+    },
+    values: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
     buttons: {
-        marginTop: 50,
+        marginTop: 30,
         height: 50,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
+    buttonBox: {
+        flex: 1,
+        padding: 5,
+    },
     button: {
         backgroundColor: "#41dfad",
-        width: 150,
         borderRadius: 30,
     },
     buttonText: {

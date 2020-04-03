@@ -20,15 +20,22 @@ export default function pharmacyDetail () {
         <View style={style.container}>
             <View style={style.card}>
                 <View>
-                    <TouchableOpacity onPress={() => navigateBack()}>
-                        <AntDesign name="arrowleft" size={28} color="#40dfac" />
-                    </TouchableOpacity>
+                    <View style={style.header}>
+                        <View>
+                            <TouchableOpacity onPress={() => navigateBack()}>
+                                <AntDesign name="arrowleft" size={28} color="#40dfac" />
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <Text style={style.pharmacyHeaderText}>{pharmacy.name}</Text>
+                        </View>
+                    </View>
+                    <View style={style.hr}></View>
                 </View>
                 <View style={style.pharmacyImg}>
                     <Image style ={style.pharmacyImage} source={pharmacyImg}/>
                 </View>
                 <View style={style.pharmacyContent}>
-                    <Text style={style.pharmacyText}>{pharmacy.name}</Text>
                     <Text style={style.pharmacyText}>{pharmacy.description}</Text>
                     <Text style={style.pharmacyText}>{pharmacy.value}</Text>
                 </View>  
