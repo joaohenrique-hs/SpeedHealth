@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "Speed Health",
+    "slug": "speedhealth",
     "platforms": [
       "ios",
       "android",
