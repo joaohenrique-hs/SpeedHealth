@@ -3,6 +3,7 @@ exports.up = function (knex) {
         table.increments('id')
 
         table.string('title').notNullable()
+        table.string('cientific_name').notNullable()
         table.decimal('price').notNullable()
         table.string('description').notNullable()
 

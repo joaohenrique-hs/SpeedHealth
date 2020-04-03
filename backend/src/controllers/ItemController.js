@@ -18,7 +18,7 @@ module.exports = {
     
     async modify(request, response) {
         const { id } = request.params
-        const { title, price, description } = request.body
+        const { title, cientific_name, price, description } = request.body
         const pharmacy_id = request.id
 
         const items = await connection('items')
@@ -32,9 +32,9 @@ module.exports = {
 
         await connection('items')
             .where('id', id)
-            .update({title, price, description}, 'title')
+            .update({title, cientific_name, price, description}, 'title')
             .then(function () {
-                return response.json({ title, price, description })
+                return response.json({ title, cientific_name, price, description })
             })
 
         return response.status(500).send()
@@ -69,13 +69,14 @@ module.exports = {
     },
 
     async create(request, response) {
-        const { title, price, description } = request.body
+        const { title, cientific_name, price, description } = request.body
 
         const pharmacy_id = request.id
 
         await connection('items')
             .insert({
                 title,
+                cientific_name,
                 price,
                 description,
                 pharmacy_id,
