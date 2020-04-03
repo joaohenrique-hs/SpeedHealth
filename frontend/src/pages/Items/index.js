@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import {FiPlus} from 'react-icons/fi';
+import { Link, useHistory} from 'react-router-dom';
+import {FiPlus, FiTrash2, FiEdit2} from 'react-icons/fi';
 
 import api from '../../services/api';
 
@@ -26,7 +26,19 @@ export default function Items() {
         })
     }, [token]);
 
-    console.log(items);
+    async function handleDeleteItem(id) {
+        try {
+            await api.delete(`items/${id}`, {
+                headers: {
+                    token: token,
+                }
+            });
+            setItems(items.filter(item => items.id !== id));
+
+        }catch (err) {
+            alert('Erro ao deletar o caso, tente novamente.')
+        }
+    }
 
     function handleLogout () {
         localStorage.clear();
@@ -47,22 +59,28 @@ export default function Items() {
             </div>
             <div className="feed">
                 {items.map(item => (
-                    <Link style={{textDecoration: '#fff'}} to="/items/modify">
-                        <div className="card" key={item.id}>
-                            <img src={CardImg} alt="img"/>
-                            <aside className="cardContent">
-                                <p className="title">{item.title}</p>
-                                <p className="description">{item.description}</p>
-                                <div>
-                                    <div className="values">
-                                        <p>VALOR</p>
-                                        <p>{Intl.NumberFormat('pt-BR', {style: "currency", currency: "BRL"}).format(item.price)}</p>
-                                    </div>
-                                    <hr/>
+                    <div className="card" key={item.id}>
+                        <img src={CardImg} alt="img"/>
+                        <aside className="cardContent">
+                            <p className="title">{item.title}</p>
+                            <p className="description">{item.description}</p>
+                            <div>
+                                <div className="values">
+                                    <p>VALOR</p>
+                                    <p>{Intl.NumberFormat('pt-BR', {style: "currency", currency: "BRL"}).format(item.price)}</p>
                                 </div>
-                            </aside>
-                        </div>
-                    </Link>
+                                <hr/>
+                            </div>
+                            <button className="edit" type="button">
+                                <Link to="/items/modify">
+                                    <FiEdit2 size={20} color="#37FF33"/>
+                                </Link>
+                            </button>
+                            <button className="trash" onClick={() => handleDeleteItem(item.id)} type="button">
+                                <FiTrash2 size={20} color="#37FF33"/>
+                            </button>
+                        </aside>
+                    </div>
                 ))}
             </div>
             <Link to="/items/register">

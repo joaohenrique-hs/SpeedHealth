@@ -78,7 +78,7 @@
     transition: .2s;
 }
 .itemsContainer .feed .card:hover {
-    cursor: pointer;
+    cursor: default;
     position: relative;
     bottom: 5px;
 }
@@ -103,6 +103,26 @@
     justify-content: space-between;
     width: 100%;
     max-inline-size: 225px;
+}
+.itemsContainer .feed .card .cardContent .trash{
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    border-style: none;
+    background-color: #fff;
+}
+.itemsContainer .feed .card .cardContent .trash:hover {
+    cursor: pointer;
+}
+.itemsContainer .feed .card .cardContent .edit{
+    position: absolute;
+    top: 8px;
+    right: 30px;
+    border-style: none;
+    background-color: #fff;
+}
+.itemsContainer .feed .card .cardContent .edit:hover {
+    cursor: pointer;
 }
 .itemsContainer .feed .card .cardContent .description {
     text-align: justify;
