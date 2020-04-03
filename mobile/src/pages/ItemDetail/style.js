@@ -1,14 +1,16 @@
 import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff'/*'#0C1A25'*/,
+        paddingTop: Constants.statusBarHeight,
     },
-    item: {
-        marginHorizontal: 20,
-        marginTop: 20,
+    card: {
+        flex: 1,
+        flexDirection: 'column',
         backgroundColor: '#fff',
+        margin: 20,
         borderRadius: 10,
         padding: 20,
         shadowColor: "#000",
@@ -27,16 +29,32 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     itemImage: {
-        width: 100,
-        height: 100,
+        width: 200,
+        height: 200,
     },
     itemContent: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        justifyContent: 'space-around',
     },
     itemText: {
+        fontSize: 22,
+        textAlign: 'justify',
+    },
+    buttons: {
+        marginTop: 50,
+        height: 50,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    button: {
+        backgroundColor: "#41dfad",
+        width: 150,
+        borderRadius: 30,
+    },
+    buttonText: {
+        textAlign: 'center',
+        color: '#fff',
         fontSize: 20,
+        padding: 10,
     },
 })

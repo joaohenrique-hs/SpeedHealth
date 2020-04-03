@@ -6,7 +6,8 @@ import Constants from 'expo-constants';
 
 import Items from '../src/pages/Items';
 import Pharmacys from '../src/pages/Pharmacys';
-import { color } from 'react-native-reanimated';
+import ItemDetail from '../src/pages/ItemDetail';
+import PharmacyDetail from '../src/pages/PharmacyDetail';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -19,7 +20,7 @@ export default function Routes() {
                     <AppStack.Screen name="Feed">
                         {() => (
                             <Tab.Navigator style={{
-                                paddingTop: Constants.statusBarHeight + 20,
+                                paddingTop: Constants.statusBarHeight,
                                 backgroundColor: '#fff'
                             }}>
                                 <Tab.Screen name="PRODUTOS" component={Items} />
@@ -27,6 +28,8 @@ export default function Routes() {
                             </Tab.Navigator>
                         )}
                     </AppStack.Screen>
+                    <AppStack.Screen name="ItemDetail" component={ItemDetail}/>
+                    <AppStack.Screen name="PharmacyDetail" component={PharmacyDetail}/>
                 </AppStack.Navigator>
             </NavigationContainer>
     );

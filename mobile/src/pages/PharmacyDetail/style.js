@@ -1,14 +1,15 @@
 import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff'/*'#0C1A25'*/,
+        paddingTop: Constants.statusBarHeight,
     },
-    item: {
-        marginHorizontal: 20,
-        marginTop: 20,
+    card: {
+        flex: 1,
         backgroundColor: '#fff',
+        margin: 20,
         borderRadius: 10,
         padding: 20,
         shadowColor: "#000",
@@ -21,22 +22,13 @@ export default StyleSheet.create({
 
         elevation: 18,
     },
-    itemImg: {
+    pharmacyImg: {
         padding: 12,
         paddingBottom: 30,
         alignItems: 'center',
     },
-    itemImage: {
-        width: 100,
-        height: 100,
-    },
-    itemContent: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    itemText: {
-        fontSize: 20,
+    pharmacyImage: {
+        width: 200,
+        height: 200,
     },
 })
