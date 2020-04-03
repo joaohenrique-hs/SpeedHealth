@@ -8,11 +8,14 @@ import pharmacyImg from '../../assets/pharmacyImg.png';
 
 const data = [
     {
-        'id': '1',
-        'name': 'FARMÁCIA 24H',
-        'whatsapp': '(49)90000-0000',
-        'city': 'DIONÍSIO CERQUEIRA',
-        'uf': 'SC'
+        "name": "FARMÁCIA 24H",
+        "email": "farmacia.48@gmail.com",
+        "cnpj": "59012158000124",
+        "whatsapp": "49988267304",
+        "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "address": "CENTRO, RUA JOKA, 1506",
+        "city": "DIONÍSIO CERQUEIRA",
+        "uf": "SC"
     },
     {
         'id': '2',
@@ -74,7 +77,7 @@ export default function Pharmacys () {
                                     <Text style={style.pharmacyText}>{pharmacy.city}</Text> 
                                     <Text style={style.pharmacyText}>{pharmacy.uf}</Text>
                                 </View>
-                            </View>  
+                            </View>
                         </TouchableOpacity>
                     </View>
                 )}

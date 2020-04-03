@@ -32,7 +32,6 @@ export default StyleSheet.create({
         color: '#41dfad',
     },
     hr: {
-        padding: 7,
         borderBottomColor: '#41dfad',
         borderBottomWidth: 1,
     },
@@ -55,6 +54,7 @@ export default StyleSheet.create({
     },
     itemDescription: {
         fontSize: 16,
+        color: '#818181',
     },
     values: {
         flexDirection: 'row',

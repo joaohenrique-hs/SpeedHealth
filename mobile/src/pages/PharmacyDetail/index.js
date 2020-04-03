@@ -9,6 +9,8 @@ import pharmacyImg from '../../assets/pharmacyImg.png';
 
 export default function pharmacyDetail () {
     const route = useRoute();
+    
+    console.log(route);
     const pharmacy = route.params.pharmacy;
     const navigation = useNavigation();
 
@@ -32,13 +34,38 @@ export default function pharmacyDetail () {
                     </View>
                     <View style={style.hr}></View>
                 </View>
-                <View style={style.pharmacyImg}>
-                    <Image style ={style.pharmacyImage} source={pharmacyImg}/>
-                </View>
                 <View style={style.pharmacyContent}>
+                    <View style={style.pharmacyImg}>
+                        <Image style ={style.pharmacyImage} source={pharmacyImg}/>
+                    </View>
+                    <View>
+                        <Text style={style.pharmacyText}>{pharmacy.address}</Text>
+                        <View style={style.pharmacyDisplay}>
+                            <Text style={style.pharmacyText}>{pharmacy.city}</Text>
+                            <Text style={style.pharmacyText}>{pharmacy.uf}</Text>
+                        </View>
+                    </View>
+                    <View>
+                        <View style={style.pharmacyDisplay}>
+                            <Text style={style.pharmacyText}>ESTABELECIMENTO</Text>
+                            <Text style={style.pharmacyText}>{}</Text>
+                        </View>
+                        <View style={style.pharmacyDisplay}>
+                            <Text style={style.pharmacyText}>WHATSAPP</Text>
+                            <Text style={style.pharmacyText}>{pharmacy.whatsapp}</Text>
+                        </View>
+                        <View style={style.pharmacyDisplay}>
+                            <Text style={style.pharmacyText}>EMAIL</Text>
+                            <Text style={style.pharmacyText}>{pharmacy.email}</Text>
+                        </View>
+                    </View>
                     <Text style={style.pharmacyText}>{pharmacy.description}</Text>
-                    <Text style={style.pharmacyText}>{pharmacy.value}</Text>
-                </View>  
+                </View>
+                <View style={style.button}>
+                    <TouchableOpacity style={style.button}>
+                        <Text style={style.buttonText}> ENTRAR EM CONTATO </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     )

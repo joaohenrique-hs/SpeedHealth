@@ -32,9 +32,17 @@ export default StyleSheet.create({
         color: '#41dfad',
     },
     hr: {
-        padding: 7,
         borderBottomColor: '#41dfad',
         borderBottomWidth: 1,
+    },
+    pharmacyContent: {
+        paddingBottom: 70,
+        flex: 1,
+        justifyContent: 'space-between',
+    },
+    pharmacyDisplay: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     pharmacyImg: {
         padding: 12,
@@ -44,5 +52,15 @@ export default StyleSheet.create({
     pharmacyImage: {
         width: 200,
         height: 200,
+    },
+    button: {
+        backgroundColor: "#41dfad",
+        borderRadius: 30,
+    },
+    buttonText: {
+        textAlign: 'center',
+        color: '#fff',
+        fontSize: 20,
+        padding: 10,
     },
 })
