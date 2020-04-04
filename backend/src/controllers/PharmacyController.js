@@ -6,12 +6,13 @@ module.exports = {
     async all(request, response) {
         const { page = 1 } = request.query
 
-        // const [count] = await connection('pharmacy').count()
+        const [count] = await connection('pharmacys').count()
 
         const pharmacys = await connection('pharmacys')
             .limit(5)
             .offset((page - 1) * 5)
             .select([
+                "id",
                 "name",
                 "email",
                 "cnpj",
@@ -22,7 +23,7 @@ module.exports = {
                 "uf"
             ])
 
-        // response.header('X-Total-Count', count['count(*)'])
+        response.header('X-Total-Count', count['count(*)'])
 
         return response.json(pharmacys)
     },
