@@ -16,9 +16,9 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
-      database: 'speed_heatlh',
+      database: 'speed_health',
       user: process.env.DB_USER,
       password: process.env.DB_PASSWD
     },
@@ -27,6 +27,7 @@ module.exports = {
       max: 10
     },
     migrations: {
+      directory: './src/database/migrations',
       tableName: 'knex_migrations'
     }
   },
