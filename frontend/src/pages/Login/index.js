@@ -32,9 +32,11 @@ export default function Login(){
 
     return(
         <div className="loginContainer">
-            <img src={Logo} alt='Speed Health'/>
             <div className="content">
-                <div className="login">
+                <div className="img">
+                    <img src={Logo} alt='Speed Health'/>
+                </div>
+                <div className="form">
                     <form onSubmit={handleLogin}>
                         <input
                             className="input"
@@ -52,16 +54,16 @@ export default function Login(){
                         />
                         <button onClick="#" className="button"> ENTRE </button>
                     </form>
-                </div>
-                <div className="ou">
-                    <hr/>
-                    <p>OU</p>
-                    <hr/>
-                </div>
-                <div className="register">
-                    <Link to="/pharmacy">
-                        <button className="button"> CADASTRE-SE </button>
-                    </Link>
+                    <div className="ou">
+                        <hr/>
+                        <p>OU</p>
+                        <hr/>
+                    </div>
+                    <div className="register">
+                        <Link to="/pharmacy">
+                            <button className="button"> CADASTRE-SE </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

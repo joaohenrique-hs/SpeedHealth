@@ -13,11 +13,13 @@ body {
     height: 100vh;
     margin: 0 auto;
 }
-buttom{
+button{
     cursor: pointer;
 }
 .button {
-    background-color: #37FF33;
+    background: linear-gradient(223.5deg, #22DAAE -29.6%, #95EFA9 130.08%);
+    position: relative;
+    bottom: 0px;
     color: white;
     border-radius: 35px;
     border-style: none;
@@ -26,10 +28,12 @@ buttom{
     box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
 }
 .button:hover {
-    background-color: #2dc92a;
+    filter: brightness(95%);
+    position: relative;
+    bottom: 2px;
 }
 .button2 {
-    background-color: #37FF33;
+    background-color: #41dfad;
     color: white;
     border-radius: 10px;
     border-style: none;
@@ -63,7 +67,6 @@ buttom{
     resize: vertical;
 }
 .card {
-    padding: 1%;
     background-color: white;
     color: #888888;
     border-radius: 10px;

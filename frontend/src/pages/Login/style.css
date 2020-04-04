@@ -1,61 +1,34 @@
 .loginContainer {
     width: 100%;
     height: 100vh;
-    margin: 0 auto;
+    padding-left: 30vh;
+    padding-right: 30vh;
 
+    
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-.loginContainer  img{
-    width: 25%;
-}
-.loginContainer .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.loginContainer .content .login {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
-.loginContainer .content .login form{
+.content {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+}
+.img {
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+
 }
-.loginContainer .content .login form input {
-    height: 35px;
-    width: 400px;
-    margin-bottom: 2vh;
+.img img {
+    width: 40%;
 }
-.loginContainer .content .login form button {
-    width: 120px;
-    height: 35px;
-    margin: 5px;
-}
-.loginContainer .content button {
-    width: 120px;
-    height: 35px;
-    margin: 5px;
-}
-.loginContainer .content .ou { 
-    color: #aeaeae;
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    align-self: center;
-}
-.loginContainer .content .ou p{
-    font-size: 20px;
-    text-align: center;
-}
-.loginContainer .content .ou hr{
-    background-color: #aeaeae;
-    border-style: none;
-    margin-top: 15px;
-    height: 1px;
-    width: 200px;
+.form form {
+    display: flex;
+    flex-direction: column;
 }
