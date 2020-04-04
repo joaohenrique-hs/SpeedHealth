@@ -9,8 +9,6 @@ import pharmacyImg from '../../assets/pharmacyImg.png';
 
 export default function pharmacyDetail () {
     const route = useRoute();
-    
-    console.log(route);
     const pharmacy = route.params.pharmacy;
     const navigation = useNavigation();
 

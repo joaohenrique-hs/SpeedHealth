@@ -1,56 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import style from './style';
 
+import api from '../../services/api';
+
 import itemImg from '../../assets/itemImg.png';
 
-const data = [
-    {
-        'id': '1',
-        'name': 'IBUPROFENO',
-        'value': 'R$ 30,00',
-        "description": "IBUPROFENO, NOME QUE DERIVA DAS INICIAIS DO ÁCIDO ISOBUTILPROPANOICOFENÓLICO, UTILIZADO PARA O TRATAMENTO DA DOR, FEBRE E INFLAMAÇÃO",
-    },
-    {
-        'id': '2',
-        'name': 'PARACETAMOL',
-        'value': 'R$ 25,00',
-        "description": "TAMBÉM CONHECIDO POR ACETAMINOFENO, É UM FÁRMACO COM PROPRIEDADES ANALGÉSICAS E ANTIPIRÉTICAS UTILIZADO PARA TRATAR A FEBRE E A DOR LEVE E MODERADA",
-    },
-    {
-        'id': '3',
-        'name': 'TYLENOL',
-        'value': 'R$ 35,00',
-        "description": "METAMIZOL OU, COMERCIALMENTE, DIPIRONA, É UM MEDICAMENTO AINDA UTILIZADO PRINCIPALMENTE COMO ANALGÉSICO E ANTIPIRÉTICO",
-    },
-    {
-        'id': '4',
-        'name': 'DORFLEX',
-        'value': 'R$ 55,00',
-        "description": "A ORFENADRINA É UM FÁRMACO ANTICOLINÉRGICO RELAXANTE MUSCULAR, COM BAIXA ATIVIDADE ANTI-HISTAMÍNICA.",
-    },
-    {
-        'id': '5',
-        'name': 'SERTRALINA',
-        'value': 'R$ 32,00',
-        "description": "O CLORIDRATO DE SERTRALINA É UM MEDICAMENTO ANTIDEPRESSIVO DA CLASSE DOS INIBIDORES SELETIVOS DE RECAPTAÇÃO DE SEROTONINA",
-    },
-]
-
 export default function Items () {
+    const [item, setItem] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [page, setPage] = useState(1);
+    const [loading, setLoading] = useState(false);
     const navigation = useNavigation();
 
     function navigateToItemDetail(item) {
-        navigation.navigate('ItemDetail', { item });
+        navigation.navigate('ItemDetail', item);
     }
+
+    async function loadItems() {
+        if (loading) {
+            return;
+        }
+        if (total > 0 && item.length === total) {
+            return;
+        }
+
+        setLoading(true);
+
+        const response = await api.get('/', {
+            params: { page }
+        });
+
+        setItem([...item, ...response.data]);
+        setTotal(response.headers['x-total-count']);
+        setPage(page + 1);
+        setLoading(false);
+    }
+
+    useEffect(() => {
+        loadItems()
+    }, [])
+
     return (
         <View style={style.container}>
             <FlatList 
-                data={data}
-                style={style.itemList}
+                data={item}
+                contentContainerStyle={{ paddingBottom: 40}}
                 showsVerticalScrollIndicator={false}
+                onEndReached={loadItems}
+                onEndReachedThreshold={0.3}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item: item }) => (
                     <View style={style.item}>
@@ -62,13 +62,18 @@ export default function Items () {
                                 <Image style ={style.itemImage} source={itemImg}/>
                             </View>
                             <View style={style.itemContent}>
-                                <Text style={style.itemText}>{item.name}</Text>
-                                <Text style={style.itemText}>{item.value}</Text> 
+                                <Text style={style.itemText}>{item.title}</Text>
+                                <Text style={style.itemText}>{Intl.NumberFormat('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL'
+                                }).format(item.price)}</Text>
                             </View>  
                         </TouchableOpacity>
                     </View>
                 )}
             />
+            
+            <View style={style.final}/>
         </View>
     )
 }

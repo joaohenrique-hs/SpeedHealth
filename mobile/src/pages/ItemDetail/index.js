@@ -9,7 +9,7 @@ import itemImg from '../../assets/itemImg.png';
 
 export default function ItemDetail () {
     const route = useRoute();
-    const item = route.params.item;
+    const item = route.params;
     const navigation = useNavigation();
 
     function navigateBack () {
@@ -27,7 +27,7 @@ export default function ItemDetail () {
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <Text style={style.itemHeaderText}>{item.name}</Text>
+                            <Text style={style.itemHeaderText}>{item.title}</Text>
                         </View>
                     </View>
                     <View style={style.hr}></View>
@@ -40,7 +40,10 @@ export default function ItemDetail () {
                     <Text style={style.itemDescription}>{item.description}</Text>
                     <View style={style.values}>
                         <Text style={style.itemText}>VALOR</Text>
-                        <Text style={style.itemText}>{item.value}</Text>
+                        <Text style={style.itemText}>{Intl.NumberFormat('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL'
+                        }).format(item.price)}</Text>
                     </View>
                 </View>
                 <View style={style.buttons}>

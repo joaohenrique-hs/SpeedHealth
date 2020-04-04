@@ -53,6 +53,9 @@ export default StyleSheet.create({
         width: 200,
         height: 200,
     },
+    pharmacyText: {
+        fontSize: 15,
+    },
     button: {
         backgroundColor: "#41dfad",
         borderRadius: 30,

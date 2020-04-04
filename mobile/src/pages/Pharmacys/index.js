@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -6,58 +6,50 @@ import style from './style';
 
 import pharmacyImg from '../../assets/pharmacyImg.png';
 
-const data = [
-    {
-        "name": "FARMÁCIA 24H",
-        "email": "farmacia.48@gmail.com",
-        "cnpj": "59012158000124",
-        "whatsapp": "49988267304",
-        "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "address": "CENTRO, RUA JOKA, 1506",
-        "city": "DIONÍSIO CERQUEIRA",
-        "uf": "SC"
-    },
-    {
-        'id': '2',
-        'name': 'FARMÁCIA POPULAR',
-        'whatsapp': '(49)90000-0000',
-        'city': 'BARRACÃO',
-        'uf': 'PR'
-    },
-    {
-        'id': '3',
-        'name': 'FARMÁCIA ALMEIDA',
-        'whatsapp': '(49)90000-0000',
-        'city': 'PATO BRANCO',
-        'uf': 'PR'
-    },
-    {
-        'id': '4',
-        'name': 'FARMÁCIA POPULAR',
-        'whatsapp': '(49)98425-2003',
-        'city': 'DIONÍSIO CERQUEIRA',
-        'uf': 'SC'
-    },
-    {
-        'id': '5',
-        'name': 'FARMÁCIA POPULAR',
-        'whatsapp': '(49)98425-2003',
-        'city': 'DIONÍSIO CERQUEIRA',
-        'uf': 'SC'
-    },
-]
+import api from '../../services/api';
 
 export default function Pharmacys () {
+    const [pharmacy, setPharmacy] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [page, setPage] = useState(1);
+    const [loading, setLoading] = useState(false);
     const navigation = useNavigation();
 
     function navigateToPharmacyDetail(pharmacy) {
         navigation.navigate('PharmacyDetail', { pharmacy });
     }
+
+    async function loadPharmacys() {
+        if (loading) {
+            return;
+        }
+        if (total > 0 && pharmacy.length === total) {
+            return;
+        }
+
+        setLoading(true);
+
+        const response = await api.get('/pharmacy', {
+            params: { page }
+        });
+
+        setPharmacy([...pharmacy, ...response.data]);
+        setTotal(response.headers['x-total-count']);
+        setPage(page + 1);
+        setLoading(false);
+    }
+
+    useEffect(() => {
+        loadPharmacys()
+    }, [])
     return (
         <View style={style.container}>
             <FlatList 
-                data={data}
-                style={style.pharmacyList}
+                data={pharmacy}
+                contentContainerStyle={{ paddingBottom: 40}}
+                showsVerticalScrollIndicator={false}
+                onEndReached={loadPharmacys}
+                onEndReachedThreshold={0.3}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item: pharmacy }) => (
                     <View style={style.pharmacy}>

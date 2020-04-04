@@ -6,6 +6,7 @@ export default StyleSheet.create({
         backgroundColor: '#fff'/*'#0C1A25'*/,
     },
     pharmacy: {
+        flex: 1,
         marginHorizontal: 20,
         marginTop: 20,
         backgroundColor: '#fff',
