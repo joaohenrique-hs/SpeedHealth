@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken')
+require('dotenv').config();
 
-const privateKey = '3a25068225ea1dba6e9300abea58550a8395daf0bc16793b40ba162f06a714e3'
+const privateKey = process.env.PRIVATE_KEY
 
-module.exports = function generateJwtToken(id, email) {
-    const token = jwt.sign({ email: email, id: id}, privateKey, { expiresIn: '72h' })
+module.exports = function generateJwtToken(id, type) {
+    const token = jwt.sign({ type: type, id: id}, privateKey, { expiresIn: '72h' })
     return token
 }
