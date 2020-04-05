@@ -6,11 +6,10 @@ exports.up = function (knex) {
         table.string('email').notNullable()
         table.string('password').notNullable()
         table.string('whatsapp').notNullable()
-        table.string('description')
+        table.string('description').defaultTo('')
         table.string('address').notNullable()
         table.string('city').notNullable()
         table.string('uf', 2).notNullable()
-
     })
 };
 

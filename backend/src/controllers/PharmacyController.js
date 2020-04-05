@@ -1,6 +1,7 @@
 const connection = require('../database/connection')
 const generateUniqueId = require('../utils/generateUniqueId')
 const generateJwtToken = require('../utils/generateJwtToken')
+const api = require('../services/api')
 
 module.exports = {
     async all(request, response) {
@@ -61,9 +62,16 @@ module.exports = {
             uf
         } = request.body
 
-        if (!description) {
-            const description = ''
-        }
+        api.get(`/v1/cnpj/${cnpj}`).
+            then(res => {
+                if(res.data.status !== 'OK') {
+                    return response.status(400).json({ error: "Invalid CNPJ" })
+                }
+            })
+            .catch(error => {
+                return response.status(500)
+            })
+
 
         const id = generateUniqueId()
 
