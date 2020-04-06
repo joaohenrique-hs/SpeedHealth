@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "local": "nodemon src/server.js"
+    "local": "nodemon src/server.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
     "node": "12.x"
   },
   "devDependencies": {
+    "jest": "^25.2.7",
     "nodemon": "^2.0.2"
   }
 }
