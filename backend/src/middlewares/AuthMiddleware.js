@@ -10,7 +10,7 @@ module.exports = function authToken(request, response, next) {
         if (err) return response.status(500).send({ message: 'Failed to authenticate token.' })
         
         request.id = decoded.id
-
+        
         next()
     })
 }

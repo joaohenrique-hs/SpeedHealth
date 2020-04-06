@@ -36,8 +36,11 @@ module.exports = {
             .then(function () {
                 return response.json({ title, price, description })
             })
-
-        return response.status(500).send()
+            .catch(() => {
+                return response.status(500).send()
+            })
+    
+        return response.status(200).send()
     },
 
     async delete(request, response) {
@@ -73,7 +76,7 @@ module.exports = {
 
         const pharmacy_id = request.id
 
-        await connection('items')
+        connection('items')
             .insert({
                 title,
                 price,
@@ -84,7 +87,9 @@ module.exports = {
                 const [item_id] = id
                 return response.json({ item_id })
             })
-
-        return response.json({ item_id })
+            .catch((err) => {
+                console.log(err)
+                return response.status(500).send()
+            })
     }
 }

@@ -44,7 +44,7 @@ module.exports = {
             return response.status(401).json({ error: "Invalid password" })
         }
 
-        token = generateJwtToken('pharmacy', email)
+        token = generateJwtToken('pharmacy', pharmacy.id)
 
         return response.json({ token })
     },
