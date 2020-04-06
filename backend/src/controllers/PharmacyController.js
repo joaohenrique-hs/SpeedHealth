@@ -87,10 +87,13 @@ module.exports = {
             city,
             uf,
         })
+        .then(() => {
+            response.json({ id })
+        })
         .catch(err => {
+            console.log(err)
             return response.status(400).send({ error: err.detail })
         })
-
-        return response.json({ id })
+    response.status().send()
     }
 }
