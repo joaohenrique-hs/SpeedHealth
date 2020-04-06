@@ -1,66 +1,312 @@
 .pharmacyContainer {
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
 }
 .pharmacyContainer .form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1vh;
-    margin-left: 15vh;
+}
+.pharmacyContainer .form img {
+    width: 50%;
+}
+.pharmacyContainer .form p {
+    font-size: 40px;
+    margin-bottom: 3%;
 }
 .pharmacyContainer .form form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
-.pharmacyContainer .form .registerTitle {
-    color: #525252;
-    font-size: 80px;
-    margin-bottom: 4vh;
-}
-.pharmacyContainer .form form input {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 40px;
-    margin-bottom: 10px;
+.pharmacyContainer .form form input{
+    background-image: linear-gradient(to right,#f0f0f0, #fff, #f0f0f0);
+    width: 90%;
+    height: 5vh;
+    font-size: 15px;
+    margin-bottom: 4%;
+    text-align: center;
 }
 .pharmacyContainer .form form .inputGroup {
-    display: flex;
-    flex-direction: row;
+    width: 90%;
+    margin-bottom: 8%;
 }
 .pharmacyContainer .form form button {
-    margin-top: 5vh;
-    font-size: 20px;
-    width: 150px;
-    height: 40px;
+    width: 50%;
+    height: 5vh;
 }
-.pharmacyContainer aside {
+.pharmacyContainer .form .ou {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 1%;
+    align-items: center;
+}
+.pharmacyContainer .form .ou p {
+    text-align: center;
+    color: #aeaeae;
+    font-size: 20px;
+    padding: 4%;
+}
+.pharmacyContainer .form .ou hr {
+    width: 100%;
+    height: 1px;
+    border-style: none;
+    border: 1px solid #aeaeae;
+}
+.pharmacyContainer .form .login {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.pharmacyContainer aside img {
-    width: 40%;
+.pharmacyContainer .form .login a {
+    width: 50%;
+}
+.pharmacyContainer .form .login a button {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 3%;
+}
+.pharmacyContainer aside {
+    padding: 10%;
 }
 .pharmacyContainer aside .card {
-    width: 80%;
-    height: auto;
-    text-align: center;
-    padding: 4%;
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.pharmacyContainer aside .cardTitle{
-    color: #464646;
-    font-size: 30px;
-}
-.pharmacyContainer aside .cardDescription{
-    margin-top: 15px;
-    color: #888888;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-.pharmacyContainer aside .cardReq{
-    color: #464646;
+.pharmacyContainer aside .card .cardTitle {
     font-size: 20px;
+    color: #000;
+    margin-bottom: 8%;
+}
+.pharmacyContainer aside .card .cardDescription {
+    text-align: justify;
+    margin-bottom: 8%;
+}
+.pharmacyContainer aside .card .cardReq {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+}
+@media screen and (min-width: 550px) {
+    .pharmacyContainer {
+        margin: 0 auto;
+        padding: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100vh;
+    }
+    .pharmacyContainer .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pharmacyContainer .form img {
+        width: 30%;
+    }
+    .pharmacyContainer .form p {
+        font-size: 45px;
+        margin-bottom: 3%;
+    }
+    .pharmacyContainer .form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .pharmacyContainer .form form input{
+        background-image: linear-gradient(to right,#f0f0f0, #fff, #f0f0f0);
+        width: 80%;
+        height: 5vh;
+        font-size: 25px;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+    .pharmacyContainer .form form .inputGroup {
+        width: 80%;
+        margin-bottom: 4%;
+    }
+    .pharmacyContainer .form form button {
+        width: 50%;
+        height: 5vh;
+        font-size: 35px;
+    }
+    .pharmacyContainer .form .ou {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        column-gap: 1%;
+        align-items: center;
+    }
+    .pharmacyContainer .form .ou p {
+        text-align: center;
+        color: #aeaeae;
+        font-size: 30px;
+        padding: 3%;
+    }
+    .pharmacyContainer .form .ou hr {
+        width: 100%;
+        height: 1px;
+        border-style: none;
+        border: 1px solid #aeaeae;
+    }
+    .pharmacyContainer .form .login {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pharmacyContainer .form .login a {
+        width: 50%;
+    }
+    .pharmacyContainer .form .login a button {
+        width: 100%;
+        height: 5vh;
+        font-size: 35px;
+        margin-bottom: 0%;
+    }
+    .pharmacyContainer aside {
+        padding: 7%;
+    }
+    .pharmacyContainer aside .card {
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pharmacyContainer aside .card .cardTitle {
+        font-size: 30px;
+        color: #000;
+        margin-bottom: 8%;
+    }
+    .pharmacyContainer aside .card .cardDescription {
+        text-align: justify;
+        margin-bottom: 8%;
+        font-size: 25px;
+    }
+    .pharmacyContainer aside .card .cardReq {
+        text-align: center;
+        font-size: 28px;
+        color: #000;
+    }
+}
+@media screen and (min-width: 1100px) {
+    .pharmacyContainer {
+        margin: 0 auto;
+        padding: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .pharmacyContainer .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pharmacyContainer .form img {
+        position: absolute;
+        top: 0%;
+        right: 14%;
+        width: 25%;
+    }
+    .pharmacyContainer .form p {
+        font-size: 90px;
+        margin-bottom: 3%;
+    }
+    .pharmacyContainer .form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .pharmacyContainer .form form input{
+        background-image: linear-gradient(to right,#f0f0f0, #fff, #f0f0f0);
+        width: 90%;
+        height: 6vh;
+        font-size: 20px;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    .pharmacyContainer .form form .inputGroup {
+        width: 90%;
+        margin-bottom: 1%;
+    }
+    .pharmacyContainer .form form button {
+        width: 25%;
+        height: 5vh;
+        font-size: 20px;
+    }
+    .pharmacyContainer .form .ou {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        column-gap: 1%;
+        align-items: center;
+    }
+    .pharmacyContainer .form .ou p {
+        text-align: center;
+        color: #aeaeae;
+        font-size: 15px;
+        padding: 3%;
+        margin: 0;
+    }
+    .pharmacyContainer .form .ou hr {
+        width: 100%;
+        height: 1px;
+        border-style: none;
+        border: 1px solid #aeaeae;
+    }
+    .pharmacyContainer .form .login {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pharmacyContainer .form .login a {
+        width: 25%;
+    }
+    .pharmacyContainer .form .login a button {
+        width: 100%;
+        height: 5vh;
+        font-size: 20px;
+        margin-bottom: 0%;
+    }
+    .pharmacyContainer aside {
+        margin-top: 42vh;
+        width: 100%;
+        padding: 7%;
+    }
+    .pharmacyContainer aside .card {
+        padding: 4%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pharmacyContainer aside .card .cardTitle {
+        font-size: 20px;
+        color: #000;
+        margin-bottom: 5%;
+    }
+    .pharmacyContainer aside .card .cardDescription {
+        text-align: justify;
+        margin-bottom: 5%;
+        font-size: 15px;
+    }
+    .pharmacyContainer aside .card .cardReq {
+        text-align: center;
+        font-size: 18px;
+        color: #000;
+    }
 }

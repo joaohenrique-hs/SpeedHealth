@@ -1,45 +1,42 @@
 .loginContainer {
-    color: #fff;
-
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    height: 100vh;
 }
-.content {
+.loginContainer .content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
     padding: 20px;
 }
-.img img {
+.loginContainer .content .img img {
     width: 100%;
 }
-.form {
+.loginContainer .content .form {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.form form {
+.loginContainer .content .form form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.form form input {
+.loginContainer .content .form form input {
     width: 90%;
     height: 6vh;
     margin-bottom: 5%;
 }
-.form form button {
+.loginContainer .content .form form button {
     margin-top: 4vh;
     width: 50%;
     height: 5vh;
 }
-.ou {
+.loginContainer .content .form .ou {
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
@@ -47,27 +44,27 @@
     align-items: center;
     justify-items: center;
 }
-.ou p {
+.loginContainer .content .form .ou p {
     text-align: center;
     padding: 3vh;
     color: #aeaeae;
 }
-.ou hr {
+.loginContainer .content .form .ou hr {
     width: 80%;
     height: 1px;
     border-style: none;
     border: 1px solid #aeaeae;
 }
-.register {
+.loginContainer .content .form .register {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.register a {
+.loginContainer .content .form .register a {
     width: 50%;
 }
-.register a button {
+.loginContainer .content .form .register a button {
     width: 100%;
     height: 5vh;
 }
@@ -78,7 +75,7 @@
         box-sizing: border-box;
         height: 100vh;
     }
-    .content {
+    .loginContainer .content {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -86,42 +83,42 @@
         height: 100vh;
         padding: 50px;
     }
-    .img {
+    .loginContainer .content .img {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .img img {
+    .loginContainer .content .img img {
         width: 75%;
     }
-    .form {
+    .loginContainer .content .form {
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .form form {
+    .loginContainer .content .form form {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .form form input {
+    .loginContainer .content .form form input {
         width: 90%;
         height: 6vh;
         margin-bottom: 5%;
         border-radius: 60px;
         font-size: 30px;
     }
-    .form form button {
+    .loginContainer .content .form form button {
         margin-top: 1vh;
         width: 40%;
         border-radius: 40px;
         height: 6vh;
         font-size: 30px;
     }
-    .ou {
+    .loginContainer .content .form .ou {
         width: 100%;
         display: grid;
         grid-template-columns: 2fr 1fr 2fr;
@@ -129,28 +126,28 @@
         align-items: center;
         justify-items: center;
     }
-    .ou p {
+    .loginContainer .content .form .ou p {
         text-align: center;
         padding: 3vh;
         color: #aeaeae;
         font-size: 30px;
     }
-    .ou hr {
+    .loginContainer .content .form .ou hr {
         width: 80%;
         height: 1px;
         border-style: none;
         border: 1px solid #aeaeae;
     }
-    .register {
+    .loginContainer .content .form .register {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .register a {
+    .loginContainer .content .form .register a {
         width: 40%;
     }
-    .register a button {
+    .loginContainer .content .form .register a button {
         width: 100%;
         border-radius: 40px;
         height: 6vh;
@@ -163,7 +160,7 @@
     padding: 0px;
     box-sizing: border-box;
     }
-    .content {
+    .loginContainer .content {
         padding: 0%;
         margin: 0%;
         width: 100%;
@@ -172,41 +169,41 @@
         flex-direction: column;
         justify-content: space-between;
     }
-    .img {
+    .loginContainer .content .img {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .img img {
+    .loginContainer .content .img img {
         width: 25%;
     }
-    .form {
+    .loginContainer .content .form {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .form form {
+    .loginContainer .content .form form {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .form form input {
+    .loginContainer .content .form form input {
         width: 50%;
         height: 6vh;
         margin-bottom: 1%;
         border-radius: 60px;
         font-size: 20px;
     }
-    .form form button {
+    .loginContainer .content .form form button {
         margin-top: 1vh;
         width: 10%;
         border-radius: 40px;
         height: 6vh;
         font-size: 20px;
     }
-    .ou {
+    .loginContainer .content .form .ou {
         width: 30%;
         display: grid;
         grid-template-columns: 2fr 1fr 2fr;
@@ -214,28 +211,28 @@
         align-items: center;
         justify-items: center;
     }
-    .ou p {
+    .loginContainer .content .form .ou p {
         text-align: center;
         color: #aeaeae;
         font-size: 20px;
         padding: 10px;
     }
-    .ou hr {
+    .loginContainer .content .form .ou hr {
         width: 100%;
         height: 1px;
         border-style: none;
         border: 1px solid #aeaeae;
     }
-    .register {
+    .loginContainer .content .form .register {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .register a {
+    .loginContainer .content .form .register a {
         width: 10%;
     }
-    .register a button {
+    .loginContainer .content .form .register a button {
         width: 100%;
         border-radius: 40px;
         height: 6vh;
