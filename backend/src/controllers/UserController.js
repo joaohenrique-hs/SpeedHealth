@@ -42,6 +42,9 @@ module.exports = {
             whatsapp,
             address,
         })
+            .catch(err => {
+                return response.status(400).send({ error: err.detail })
+            })
 
         return response.json({ name })
     }

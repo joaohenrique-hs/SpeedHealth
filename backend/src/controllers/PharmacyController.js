@@ -64,6 +64,7 @@ module.exports = {
 
         api.get(`/v1/cnpj/${cnpj}`).
             then(res => {
+                console.log('chegou')
                 if(res.data.status !== 'OK') {
                     return response.status(400).json({ error: "Invalid CNPJ" })
                 }
@@ -86,6 +87,9 @@ module.exports = {
             address,
             city,
             uf,
+        })
+        .catch(err => {
+            return response.status(400).send({ error: err.detail })
         })
 
         return response.json({ id })
