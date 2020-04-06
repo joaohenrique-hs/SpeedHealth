@@ -62,9 +62,8 @@ module.exports = {
             uf
         } = request.body
 
-        api.get(`/v1/cnpj/${cnpj}`).
+        await api.get(`/v1/cnpj/${cnpj}`).
             then(res => {
-                console.log('chegou')
                 if(res.data.status !== 'OK') {
                     return response.status(400).json({ error: "Invalid CNPJ" })
                 }
