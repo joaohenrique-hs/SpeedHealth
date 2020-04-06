@@ -32,6 +32,7 @@ module.exports = {
             }),
             [Segments.BODY]: Joi.object().keys({
                 title: Joi.string().required(),
+                cientific_name: Joi.string(),
                 price: Joi.number().required(),
                 description: Joi.string().required(),
             })
@@ -55,6 +56,7 @@ module.exports = {
             }).unknown(),
             [Segments.BODY]: Joi.object().keys({
                 title: Joi.string().required(),
+                cientific_name: Joi.string(),
                 price: Joi.number().required(),
                 description: Joi.string().required(),
             })
