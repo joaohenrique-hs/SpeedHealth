@@ -1,149 +1,412 @@
+.itemsContainer {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 .itemsContainer .navBar {
-    background-color: #fff;
-    height: 90px;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
+    align-items: center;
 }
 .itemsContainer .navBar .navBarLeft {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 5vh;
 }
 .itemsContainer .navBar .navBarLeft img {
-    width: 10%;
-    min-width: 90px;
+    width: 30%;
+    margin-left: 2%;
+    margin-right: 5%;
 }
 .itemsContainer .navBar .navBarLeft span {
-    margin-left: 5vh;
-    font-size: 25px;
+    color: #888888;
+}
+.itemsContainer .navBar .navBarLeft span .pharmacyName {
+    color: #464646;
 }
 .itemsContainer .navBar .navBarRight {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 5vh;
 }
-.itemsContainer .navBar .navBarRight .button2 {
-    font-size: 25px;
-    width: 250px;
-    height: 60px;
-    margin-right: 2vh;
+.itemsContainer .navBar .navBarRight .button {
+    width: 120px;
+    height: 30px;
+    margin-right: 8px;
+}
+.itemsContainer .navBar .navBarRight .button {
+    bottom: 0px;
 }
 .itemsContainer .navBar .navBarRight .logout {
     background-color: #f5f5f5;
-    width: 60px;
-    height: 60px;
-    border: 3px solid #37FF33;
-    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #22DAAE;
+    border-radius: 30px;
     box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
-    transition: filter .2s;
+    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
 }
 .itemsContainer .navBar .navBarRight .logout:hover {
-    filter: brightness(90%);
+    background-color: #22DAAE;
 }
-@media (min-width: 1300px) {
-    .itemsContainer .feed {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 2%;
-        row-gap: 5%;
-        padding: 20px;
-    }
+.itemsContainer .feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
 }
-@media (max-width: 1300px) {
-    .itemsContainer .feed {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-        column-gap: 2%;
-        row-gap: 5%;
-        padding: 20px;
-    }
+.itemsContainer .feed .card {
+    padding: 5%;
+    margin-bottom: 20px;
 }
 .itemsContainer .feed .card {
     display: flex;
     flex-direction: row;
-    column-gap: 5vh;
-    width: 100%;
-    min-width: 425px;
-    max-width: 425px;
-    padding: 4vh;
-    position: relative;
-    bottom: 0px;
-    transition: .2s;
-}
-.itemsContainer .feed .card:hover {
-    cursor: default;
-    position: relative;
-    bottom: 5px;
+    justify-content: space-between;
 }
 .itemsContainer .feed .card img {
-    width: 40%;
+    width: 45%;
+}
+.itemsContainer .feed .card .cardContent {
+    margin-top: 8%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.itemsContainer .feed .card .cardContent .title {
+    color: #464646;
+    text-align: center;
+    overflow: hidden;
+    width: 150px;
+}
+.itemsContainer .feed .card .cardContent .description {
+    color: #888888;
+    text-align: center;
+    overflow: hidden;
+    width: 150px;
 }
 .itemsContainer .feed .card .cardContent .values {
     color: #464646;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
-.itemsContainer .feed .card .cardContent .title {
-    font-size: 20px;
-    color: #464646;
-    text-align: center;
-}
-.itemsContainer .feed .card .cardContent {
-    padding-left: 4vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    max-inline-size: 225px;
-}
-.itemsContainer .feed .card .cardContent .trash{
+.itemsContainer .feed .card .edit {
     position: absolute;
-    top: 8px;
-    right: 5px;
+    right: 15%;
+}
+.itemsContainer .feed .card .edit button {
     border-style: none;
     background-color: #fff;
 }
-.itemsContainer .feed .card .cardContent .trash:hover {
-    cursor: pointer;
-}
-.itemsContainer .feed .card .cardContent .edit{
+.itemsContainer .feed .card .trash {
     position: absolute;
-    top: 8px;
-    right: 30px;
+    right: 8%;
+}
+.itemsContainer .feed .card .trash button {
     border-style: none;
     background-color: #fff;
-}
-.itemsContainer .feed .card .cardContent .edit:hover {
-    cursor: pointer;
-}
-.itemsContainer .feed .card .cardContent .description {
-    text-align: justify;
-    text-align: center;
-    word-wrap: break-word;
 }
 .itemsContainer .add {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
 }
 .itemsContainer .add button {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-style: none;
     border-radius: 50px;
-    background: #37FF33;
+    background: linear-gradient(223.5deg, #22DAAE -29.6%, #95EFA9 130.08%);
     filter: opacity(70%);
     transition: .2s;
 }
-.itemsContainer .add button:hover {
-    filter: opacity(90%);
-    cursor: pointer;
+@media screen and (min-width: 550px) {
+    .itemsContainer {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .itemsContainer .navBar {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .itemsContainer .navBar .navBarLeft {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .itemsContainer .navBar .navBarLeft img {
+        width: 22%;
+        margin-left: 4%;
+        margin-right: 5%;
+    }
+    .itemsContainer .navBar .navBarLeft span {
+        font-size: 25px;
+        color: #888888;
+    }
+    .itemsContainer .navBar .navBarLeft span .pharmacyName {
+        color: #464646;
+    }
+    .itemsContainer .navBar .navBarRight {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .itemsContainer .navBar .navBarRight .button {
+        width: 250px;
+        height: 50px;
+        margin-right: 8px;
+    }
+    .itemsContainer .navBar .navBarRight .button {
+        bottom: 0px;
+    }
+    .itemsContainer .navBar .navBarRight .logout {
+        background-color: #f5f5f5;
+        width: 50px;
+        height: 50px;
+        border: 2px solid #22DAAE;
+        border-radius: 30px;
+        box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
+        transition: .2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+    }
+    .itemsContainer .navBar .navBarRight .logout:hover {
+        background-color: #22DAAE;
+    }
+    .itemsContainer .feed {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3%;
+        padding: 3%;
+    }
+    .itemsContainer .feed .card {
+        position: relative;
+        padding: 5%;
+        margin-bottom: 20px;
+    }
+    .itemsContainer .feed .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .itemsContainer .feed .card img {
+        width: 45%;
+    }
+    .itemsContainer .feed .card .cardContent {
+        margin-top: 6%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .itemsContainer .feed .card .cardContent .title {
+        align-self: center;
+        color: #464646;
+        text-align: center;
+        overflow: hidden;
+        width: 150px;
+        font-size: 22px;
+    }
+    .itemsContainer .feed .card .cardContent .description {
+        align-self: center;
+        color: #888888;
+        text-align: center;
+        overflow: hidden;
+        width: 150px;
+        font-size: 20px;
+    }
+    .itemsContainer .feed .card .cardContent .values {
+        color: #464646;
+        display: flex;
+        justify-content: space-between;
+    }
+    .itemsContainer .feed .card .edit {
+        position: absolute;
+        right: 10%;
+    }
+    .itemsContainer .feed .card .edit button {
+        border-style: none;
+        background-color: #fff;
+    }
+    .itemsContainer .feed .card .trash {
+        position: absolute;
+        right: 2%;
+    }
+    .itemsContainer .feed .card .trash button {
+        
+        border-style: none;
+        background-color: #fff;
+    }
+    .itemsContainer .add {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+    }
+    .itemsContainer .add button {
+        width: 120px;
+        height: 120px;
+        border-style: none;
+        border-radius: 60px;
+        background: linear-gradient(223.5deg, #22DAAE -29.6%, #95EFA9 130.08%);
+        filter: opacity(70%);
+        transition: .2s;
+    }
+}
+@media screen and (min-width: 1100px) {
+    .itemsContainer {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .itemsContainer .navBar {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .itemsContainer .navBar .navBarLeft {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .itemsContainer .navBar .navBarLeft img {
+        width: 13%;
+        margin-left: 4%;
+        margin-right: 5%;
+    }
+    .itemsContainer .navBar .navBarLeft span {
+        font-size: 25px;
+        color: #888888;
+    }
+    .itemsContainer .navBar .navBarLeft span .pharmacyName {
+        color: #464646;
+    }
+    .itemsContainer .navBar .navBarRight {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .itemsContainer .navBar .navBarRight .button {
+        width: 250px;
+        height: 50px;
+        margin-right: 8px;
+    }
+    .itemsContainer .navBar .navBarRight .button {
+        bottom: 0px;
+    }
+    .itemsContainer .navBar .navBarRight .logout {
+        background-color: #f5f5f5;
+        width: 50px;
+        height: 50px;
+        border: 2px solid #22DAAE;
+        border-radius: 30px;
+        box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        transition: .2s;
+    }
+    .itemsContainer .navBar .navBarRight .logout:hover {
+        filter: brightness(90%);
+        background-color: #fff;
+    }
+    .itemsContainer .feed {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2%;
+        padding: 2%;
+    }
+    .itemsContainer .feed .card {
+        position: relative;
+        padding: 5%;
+        margin-bottom: 20px;
+    }
+    .itemsContainer .feed .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .itemsContainer .feed .card img {
+        width: 45%;
+    }
+    .itemsContainer .feed .card .cardContent {
+        margin-top: 6%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .itemsContainer .feed .card .cardContent .title {
+        align-self: center;
+        color: #464646;
+        text-align: center;
+        overflow: hidden;
+        width: 190px;
+        font-size: 22px;
+    }
+    .itemsContainer .feed .card .cardContent .description {
+        align-self: center;
+        color: #888888;
+        text-align: center;
+        overflow: hidden;
+        width: 190px;
+        font-size: 20px;
+    }
+    .itemsContainer .feed .card .cardContent .values {
+        color: #464646;
+        display: flex;
+        justify-content: space-between;
+    }
+    .itemsContainer .feed .card .edit {
+        position: absolute;
+        right: 10%;
+    }
+    .itemsContainer .feed .card .edit button {
+        border-style: none;
+        background-color: #fff;
+    }
+    .itemsContainer .feed .card .trash {
+        position: absolute;
+        right: 2%;
+    }
+    .itemsContainer .feed .card .trash button {
+        
+        border-style: none;
+        background-color: #fff;
+    }
+    .itemsContainer .add {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+    }
+    .itemsContainer .add button {
+        width: 120px;
+        height: 120px;
+        border-style: none;
+        border-radius: 60px;
+        background: linear-gradient(223.5deg, #22DAAE -29.6%, #95EFA9 130.08%);
+        filter: opacity(70%);
+        transition: .2s;
+    }
 }

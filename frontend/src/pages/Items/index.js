@@ -50,11 +50,11 @@ export default function Items() {
             <div className="navBar">
                 <div className="navBarLeft">
                     <img src={Logo} alt="Speed Health"/>
-                    <span className="welcome">OLÁ, EQUIPE POSTIT</span>
+                    <span className="welcome">OLÁ, <span className="pharmacyName">ESQUIPE POSTIT</span> </span>
                 </div>
                 <div className="navBarRight">
-                    <button className="button2">PERFIL</button>
-                    <button onClick={handleLogout} className="logout"> <FiPower size={20} color="#37FF33"/> </button>
+                    <button className="button">PERFIL</button>
+                    <button onClick={handleLogout} className="logout"> <FiPower className="FiPower" size={12} color="#22DAAE"/> </button>
                 </div>
             </div>
             <div className="feed">
@@ -71,21 +71,25 @@ export default function Items() {
                                 </div>
                                 <hr/>
                             </div>
-                            <button className="edit" type="button">
+                        </aside>
+                        <div className="edit">
+                            <button type="button">
                                 <Link to="/items/modify">
                                     <FiEdit2 size={20} color="#37FF33"/>
                                 </Link>
                             </button>
-                            <button className="trash" onClick={() => handleDeleteItem(item.id)} type="button">
+                        </div>
+                        <div className="trash">
+                            <button onClick={() => handleDeleteItem(item.id)} type="button">
                                 <FiTrash2 size={20} color="#37FF33"/>
                             </button>
-                        </aside>
+                        </div>
                     </div>
                 ))}
             </div>
             <Link to="/items/register">
                 <div className="add">
-                    <button> <FiPlus size={60} color={'#fff'} /> </button>
+                    <button> <FiPlus size={45} color={'#fff'} /> </button>
                 </div>
             </Link>
         </div>
