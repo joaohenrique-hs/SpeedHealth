@@ -63,7 +63,7 @@ button{
     text-align: left;
     text-indent: 20px;
     width: 100%;
-    resize: vertical;
+    resize: none;
 }
 .card {
     background-color: white;

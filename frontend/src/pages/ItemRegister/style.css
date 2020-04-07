@@ -1,66 +1,15 @@
 .itemRegisterContainer {
-    padding-right: 17vh;
-    padding-left: 17vh;
-    padding-top: 8vh;
-}
-.itemRegisterContainer .header div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 3vh;
-    padding-left: 3vh;
-}
-.itemRegisterContainer .card .header div spam {
-    font-size: 50px;
-    color: #37FF33;
-}
-.itemRegisterContainer .card .header hr {
-    background-color: #37FF33;
-    border-style: none;
-    height: 3px;
-    margin-bottom: 1vh;
-}
-.itemRegisterContainer .card .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.itemRegisterContainer .card .content form {
-    padding: 3vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 500px;
-}
-.itemRegisterContainer .card .content form input {
-    height: 40px;
-    margin-bottom: 20px;
-}
-.itemRegisterContainer .card .content form textarea {
-    height: 200px;
-    resize: none;
-    margin-bottom: 20px;
-}
-.itemRegisterContainer .card .content .aside {
-    padding: 3%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.itemRegisterContainer .card .content .aside img {
-    width: 80%;
-    border-radius: 8px;
-}
-.itemRegisterContainer .card .content .aside div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     width: 100%;
-    margin-top: 10vh;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
 }
-.itemRegisterContainer .card .content form button{
-    width: 200px;
-    height: 35px;
+.itemRegisterContainer .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.aside img {
+    width: 25%;
 }

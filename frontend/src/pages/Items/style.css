@@ -269,7 +269,7 @@
         transition: .2s;
     }
 }
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1020px) {
     .itemsContainer {
         width: 100%;
         padding: 0;
@@ -341,8 +341,6 @@
         position: relative;
         padding: 5%;
         margin-bottom: 20px;
-    }
-    .itemsContainer .feed .card {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -363,7 +361,7 @@
         text-align: center;
         overflow: hidden;
         width: 190px;
-        font-size: 22px;
+        font-size: 4vh;
     }
     .itemsContainer .feed .card .cardContent .description {
         align-self: center;
@@ -371,6 +369,7 @@
         text-align: center;
         overflow: hidden;
         width: 190px;
+        height: 120px;
         font-size: 20px;
     }
     .itemsContainer .feed .card .cardContent .values {
