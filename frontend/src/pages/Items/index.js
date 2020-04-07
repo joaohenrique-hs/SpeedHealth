@@ -54,7 +54,7 @@ export default function Items() {
                 </div>
                 <div className="navBarRight">
                     <button className="button">PERFIL</button>
-                    <button onClick={handleLogout} className="logout"> <FiPower className="FiPower" size={12} color="#22DAAE"/> </button>
+                    <button onClick={handleLogout} className="logout"> <FiPower className="FiPower" size={'3vh'} color="#22DAAE"/> </button>
                 </div>
             </div>
             <div className="feed">
@@ -75,13 +75,13 @@ export default function Items() {
                         <div className="edit">
                             <button type="button">
                                 <Link to="/items/modify">
-                                    <FiEdit2 size={20} color="#37FF33"/>
+                                    <FiEdit2 size={'3vh'} color="#37FF33"/>
                                 </Link>
                             </button>
                         </div>
                         <div className="trash">
                             <button onClick={() => handleDeleteItem(item.id)} type="button">
-                                <FiTrash2 size={20} color="#37FF33"/>
+                                <FiTrash2 size={'3vh'} color="#37FF33"/>
                             </button>
                         </div>
                     </div>
@@ -89,7 +89,7 @@ export default function Items() {
             </div>
             <Link to="/items/register">
                 <div className="add">
-                    <button> <FiPlus size={45} color={'#fff'} /> </button>
+                    <button> <FiPlus size={'8vh'} color={'#fff'} /> </button>
                 </div>
             </Link>
         </div>

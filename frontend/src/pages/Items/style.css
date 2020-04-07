@@ -289,12 +289,12 @@
         align-items: center;
     }
     .itemsContainer .navBar .navBarLeft img {
-        width: 13%;
-        margin-left: 4%;
-        margin-right: 5%;
+        width: 15vh;
+        margin-left: 2vh;
+        margin-right: 3vh;
     }
     .itemsContainer .navBar .navBarLeft span {
-        font-size: 25px;
+        font-size: 4vh;
         color: #888888;
     }
     .itemsContainer .navBar .navBarLeft span .pharmacyName {
@@ -306,25 +306,26 @@
         align-items: center;
     }
     .itemsContainer .navBar .navBarRight .button {
-        width: 250px;
-        height: 50px;
-        margin-right: 8px;
+        width: 40vh;
+        height: 8vh;
+        margin-right: 2vh;
+        font-size: 3vh;
     }
-    .itemsContainer .navBar .navBarRight .button {
-        bottom: 0px;
+    .itemsContainer .navBar .navBarRight .button:hover {
+        bottom: 3px;
     }
     .itemsContainer .navBar .navBarRight .logout {
         background-color: #f5f5f5;
-        width: 50px;
-        height: 50px;
-        border: 2px solid #22DAAE;
-        border-radius: 30px;
+        width: 8vh;
+        height: 8vh;
+        border: .3vh solid #22DAAE;
+        border-radius: 30vh;
         box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-right: 20px;
+        margin-right: 3vh;
         transition: .2s;
     }
     .itemsContainer .navBar .navBarRight .logout:hover {
@@ -334,8 +335,9 @@
     .itemsContainer .feed {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 2%;
-        padding: 2%;
+        column-gap: 4vh;
+        row-gap: 1vh;
+        padding: 3vh;
     }
     .itemsContainer .feed .card {
         position: relative;
@@ -377,6 +379,9 @@
         display: flex;
         justify-content: space-between;
     }
+    .itemsContainer .feed .card .cardContent .values p {
+        font-size: 3vh;
+    }
     .itemsContainer .feed .card .edit {
         position: absolute;
         right: 10%;
@@ -396,14 +401,14 @@
     }
     .itemsContainer .add {
         position: fixed;
-        bottom: 40px;
-        right: 40px;
+        bottom: 5vh;
+        right: 5vh;
     }
     .itemsContainer .add button {
-        width: 120px;
-        height: 120px;
+        width: 18vh;
+        height: 18vh;
         border-style: none;
-        border-radius: 60px;
+        border-radius: 60vh;
         background: linear-gradient(223.5deg, #22DAAE -29.6%, #95EFA9 130.08%);
         filter: opacity(70%);
         transition: .2s;

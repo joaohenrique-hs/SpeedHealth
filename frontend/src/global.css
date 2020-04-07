@@ -21,7 +21,7 @@ button{
     position: relative;
     bottom: 0px;
     color: white;
-    border-radius: 35px;
+    border-radius: 35vh;
     border-style: none;
     font-size: 18px;
     transition: .2s;
@@ -68,6 +68,6 @@ button{
 .card {
     background-color: white;
     color: #888888;
-    border-radius: 10px;
-    box-shadow: 5.57798px 5.57798px 13.945px rgba(130, 130, 130, 0.25);
+    border-radius: 2vh;
+    box-shadow: 1.5vh 1.5vh 3vh rgba(130, 130, 130, 0.25);
 }
