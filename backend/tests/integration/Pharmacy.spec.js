@@ -2,7 +2,6 @@ const request = require('supertest')
 const app = require('../../src/app')
 const jwt = require('jsonwebtoken')
 const connection = require('../../src/database/connection')
-require('dotenv').config()
 
 const privateKey = process.env.PRIVATE_KEY
 
