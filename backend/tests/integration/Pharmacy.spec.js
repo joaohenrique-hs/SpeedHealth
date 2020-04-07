@@ -60,4 +60,17 @@ describe('Pharmacy', () => {
             expect(decoded.id).toBe(id)
         })
     })
+
+    it('should be able to list pharmacys', async () => {
+        const response = await request(app)
+            .get('/pharmacy')
+            .send()
+            .expect(200)
+
+        list = response.body[0]
+
+        delete pharmacy.password
+
+        expect(response.body[0]).toMatchObject(pharmacy)
+    })
 })
