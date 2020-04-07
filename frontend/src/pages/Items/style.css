@@ -339,14 +339,14 @@
     }
     .itemsContainer .feed .card {
         position: relative;
-        padding: 5%;
+        padding: 4vh;
         margin-bottom: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
     .itemsContainer .feed .card img {
-        width: 45%;
+        width: 26vh;
     }
     .itemsContainer .feed .card .cardContent {
         margin-top: 6%;
@@ -360,7 +360,7 @@
         color: #464646;
         text-align: center;
         overflow: hidden;
-        width: 190px;
+        width: 30vh;
         font-size: 4vh;
     }
     .itemsContainer .feed .card .cardContent .description {
@@ -368,9 +368,9 @@
         color: #888888;
         text-align: center;
         overflow: hidden;
-        width: 190px;
-        height: 120px;
-        font-size: 20px;
+        width: 30vh;
+        height: 20vh;
+        font-size: 3vh;
     }
     .itemsContainer .feed .card .cardContent .values {
         color: #464646;
