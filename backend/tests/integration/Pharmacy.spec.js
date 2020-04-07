@@ -54,7 +54,7 @@ describe('Pharmacy', () => {
 
         expect(response.body).toHaveProperty('token')
 
-        jwt.verify(token, privateKey, function (err, decoded) {
+        jwt.verify(response.body.token, privateKey, function (err, decoded) {
             expect(!err)
             expect(decoded.type).toBe('pharmacy')
             expect(decoded.id).toBe(id)
