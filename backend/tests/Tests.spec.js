@@ -13,7 +13,7 @@ describe('sequentially run tests', () => {
         await connection.destroy()
     })
 
-    var pharmacy = {
+    const pharmacy = {
         name: "Farmacia 24horas",
         email: "farmacia.24@gmail.com",
         password: "farmacia24",
@@ -25,6 +25,12 @@ describe('sequentially run tests', () => {
         uf: "SC"
     }
 
+    const item = {
+        title: "Paracetamll",
+        price: 10,
+        description: "Bom para dor de cabeça"
+    }
+
     PharmacyTests(pharmacy)
-    ItemTests(pharmacy.email, pharmacy.password)
+    ItemTests(pharmacy.email, pharmacy.password, item)
 })
