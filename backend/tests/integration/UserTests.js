@@ -1,6 +1,8 @@
 const request = require('supertest')
 const app = require('../../src/app')
-const connection = require('../../src/database/connection')
+const jwt = require('jsonwebtoken')
+
+const privateKey = process.env.PRIVATE_KEY
 
 const userTests = () => {
     describe('User action', () => {
@@ -20,6 +22,22 @@ const userTests = () => {
                 .expect(200)
 
             expect(response.body.name).toBe(user.name)
+        })
+
+        it('should logon an user returning an valid token', async () => {
+            const response = await request(app)
+                .post('/session')
+                .send({
+                    email: user.email,
+                    password: user.password
+                })
+                .expect(200)
+
+            jwt.verify(response.body.token, privateKey, function (err, decoded) {
+                expect(!err)
+                expect(decoded.type).toBe('user')
+                expect(decoded.id).toHaveLength(8)
+            })
         })
     })
 }
