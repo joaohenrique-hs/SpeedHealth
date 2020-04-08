@@ -1,11 +1,18 @@
 const request = require('supertest')
 const app = require('../../src/app')
 
-const itemTests = (email, password, item) => {
+const itemTests = (email, password) => {
     describe('Items', () => {
+        
+        const item = {
+            title: "Paracetamll",
+            price: 10,
+            description: "Bom para dor de cabeça"
+        }
+
         var token
 
-        var modifiedItem = {
+        const modifiedItem = {
             title: "Ibuprofeno",
             price: 8,
             description: "Bom para dor e mal estar"

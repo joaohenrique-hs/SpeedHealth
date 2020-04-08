@@ -1,5 +1,7 @@
 const PharmacyTests = require('./integration/PharmacyTests')
+const UserTests = require('./integration/UserTests')
 const ItemTests = require('./integration/ItemTests')
+
 const connection = require('../src/database/connection')
 
 describe('sequentially run tests', () => {
@@ -25,12 +27,7 @@ describe('sequentially run tests', () => {
         uf: "SC"
     }
 
-    const item = {
-        title: "Paracetamll",
-        price: 10,
-        description: "Bom para dor de cabeça"
-    }
-
     PharmacyTests(pharmacy)
-    ItemTests(pharmacy.email, pharmacy.password, item)
+    ItemTests(pharmacy.email, pharmacy.password)
+    UserTests()
 })
