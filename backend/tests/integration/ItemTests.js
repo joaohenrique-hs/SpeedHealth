@@ -49,6 +49,16 @@ const itemTests = (email, password, item) => {
             
             expect(response.body[0]).toMatchObject(modifiedItem)
         })
+
+        it('should be able to list items of pharmacy', async () => {
+            const response = await request(app)
+                .get('/items')
+                .set({ token })
+                .send()
+                .expect(200)
+            
+            expect(response.body[0]).toMatchObject(modifiedItem)
+        })
     })
 }
 
