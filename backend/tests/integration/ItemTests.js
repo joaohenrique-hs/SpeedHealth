@@ -46,7 +46,7 @@ const itemTests = (email, password, item) => {
                 .get('/')
                 .send()
                 .expect(200)
-            
+
             expect(response.body[0]).toMatchObject(modifiedItem)
         })
 
@@ -56,8 +56,16 @@ const itemTests = (email, password, item) => {
                 .set({ token })
                 .send()
                 .expect(200)
-            
+
             expect(response.body[0]).toMatchObject(modifiedItem)
+        })
+
+        it('should be able to delete an item', async () => {
+            const response = await request(app)
+                .delete('/items/1')
+                .set({ token })
+                .send()
+                .expect(204)
         })
     })
 }
