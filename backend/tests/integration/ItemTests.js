@@ -40,6 +40,15 @@ const itemTests = (email, password, item) => {
 
             expect(response.body).toMatchObject(modifiedItem)
         })
+
+        it('should be able to list items', async () => {
+            const response = await request(app)
+                .get('/')
+                .send()
+                .expect(200)
+            
+            expect(response.body[0]).toMatchObject(modifiedItem)
+        })
     })
 }
 
