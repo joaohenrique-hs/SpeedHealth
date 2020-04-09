@@ -3,14 +3,16 @@ const app = require('../../src/app')
 
 const itemTests = (email, password) => {
     describe('Items', () => {
-        
+
         const item = {
-            title: "Paracetamll",
+            title: "Paracetamol",
             price: 10,
             description: "Bom para dor de cabeça"
         }
 
         var token
+
+        var invalidToken
 
         const modifiedItem = {
             title: "Ibuprofeno",
@@ -28,6 +30,7 @@ const itemTests = (email, password) => {
                 .expect(200)
 
             token = getToken.body.token
+            invalidToken = token.concat(item.title)
 
             const response = await request(app)
                 .post('/items')
@@ -36,6 +39,16 @@ const itemTests = (email, password) => {
                 .expect(200)
 
             expect(response.body.item_id).toBe(1)
+        })
+
+        it('should be able to block fail login', async () => {
+            await request(app)
+                .post('/login')
+                .send({
+                    email,
+                    password: "IncorrectPasswd"
+                })
+                .expect(401)
         })
 
         it('should be able to modify an item', async () => {
@@ -57,6 +70,7 @@ const itemTests = (email, password) => {
             expect(response.body[0]).toMatchObject(modifiedItem)
         })
 
+
         it('should be able to list items of pharmacy', async () => {
             const response = await request(app)
                 .get('/items')
@@ -67,8 +81,9 @@ const itemTests = (email, password) => {
             expect(response.body[0]).toMatchObject(modifiedItem)
         })
 
+
         it('should be able to delete an item', async () => {
-            const response = await request(app)
+            await request(app)
                 .delete('/items/1')
                 .set({ token })
                 .send()
