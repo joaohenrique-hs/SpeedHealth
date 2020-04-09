@@ -51,6 +51,27 @@ const itemTests = (email, password) => {
                 .expect(401)
         })
 
+        it('should block all requests with invalid token', async () => {
+
+            await request(app)
+                .get('/items')
+                .set({ token: invalidToken })
+                .send()
+                .expect(401)
+
+            await request(app)
+                .put('/items/1')
+                .set({ token: invalidToken })
+                .send(modifiedItem)
+                .expect(401)
+
+            await request(app)
+                .get('/items')
+                .set({ token: invalidToken })
+                .send()
+                .expect(401)
+        })
+
         it('should be able to modify an item', async () => {
             const response = await request(app)
                 .put('/items/1')
