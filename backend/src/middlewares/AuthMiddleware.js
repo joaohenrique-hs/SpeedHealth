@@ -7,7 +7,7 @@ module.exports = function authToken(request, response, next) {
     const token = request.headers.token
 
     jwt.verify(token, privateKey, function (err, decoded) {
-        if (err) return response.status(500).send({ message: 'Failed to authenticate token.' })
+        if (err) return response.status(401).send({ message: 'Failed to authenticate token.' })
         
         request.id = decoded.id
         
