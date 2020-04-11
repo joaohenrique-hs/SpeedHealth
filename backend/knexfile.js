@@ -26,6 +26,23 @@ module.exports = {
     useNullAsDefault: true,
   },
 
+  test_pg: {
+    client: 'pg',
+    connection: {
+      database: 'test_pg',
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWD
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      directory: './src/database/migrations',
+      tableName: 'knex_test'
+    }
+  },
+
   staging: {
     client: 'pg',
     connection: {
