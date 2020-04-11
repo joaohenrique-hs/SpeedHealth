@@ -79,6 +79,10 @@ const itemTests = (email, password) => {
                 .send(modifiedItem)
                 .expect(200)
 
+            expect(response.body).toHaveProperty('price')
+
+            delete item.price
+
             expect(response.body).toMatchObject(modifiedItem)
         })
 
@@ -87,6 +91,10 @@ const itemTests = (email, password) => {
                 .get('/')
                 .send()
                 .expect(200)
+
+            expect(response.body[0]).toHaveProperty('price')
+
+            delete modifiedItem.price
 
             expect(response.body[0]).toMatchObject(modifiedItem)
         })
@@ -98,6 +106,10 @@ const itemTests = (email, password) => {
                 .set({ token })
                 .send()
                 .expect(200)
+
+            expect(response.body[0]).toHaveProperty('price')
+
+            delete modifiedItem.price
 
             expect(response.body[0]).toMatchObject(modifiedItem)
         })
