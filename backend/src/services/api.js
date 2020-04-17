@@ -1,8 +1,8 @@
-const axios = require('axios')
-require('dotenv').config()
+const axios = require('axios');
+require('dotenv').config();
 
 const api = axios.create({
-    baseURL: 'https://www.receitaws.com.br'
-})
+  baseURL: 'https://www.receitaws.com.br',
+});
 
-module.exports = api
+module.exports = api;
