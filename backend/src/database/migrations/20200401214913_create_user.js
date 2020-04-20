@@ -9,6 +9,6 @@ exports.up = function userMigration(knex) {
   });
 };
 
-exports.down = function (knex) {
+exports.down = function userRollback(knex) {
   return knex.schema.dropTable('users');
 };

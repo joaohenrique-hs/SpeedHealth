@@ -13,6 +13,6 @@ exports.up = function pharmacyMigration(knex) {
   });
 };
 
-exports.down = function (knex) {
+exports.down = function pharmacyRollback(knex) {
   return knex.schema.dropTable('pharmacys');
 };

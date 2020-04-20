@@ -13,6 +13,6 @@ exports.up = function itemMigration(knex) {
   });
 };
 
-exports.down = function (knex) {
+exports.down = function itemRollback(knex) {
   return knex.schema.dropTable('items');
 };
