@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  api:
+    image: node:12-slim
+    ports:
+      - "3000:3000"
+    working_dir: "/home/node/app"
+    volumes: 
+      - ./:/home/node/app
+    command: "npm start"
+    networks:
+      - backend
+
+  pgsql:
+    image: postgres
+    restart: always
+    volumes: 
+      - pgsph:/var/lib/postgres/data
+    environment:
+      POSTGRES_PASSWORD:
+      POSTGRES_USER:
+      POSTGRES_DB: 
+    ports:
+      - "5434:5434"
+
+networks:
+  backend:
+    driver: "bridge"
+
+volumes:
+  pgsph:
